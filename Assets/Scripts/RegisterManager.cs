@@ -55,6 +55,7 @@ public class RegisterManager : MonoBehaviour
     private FirebaseAuth auth;
     public Text ErrorText;
     public DatabaseReference reference;
+    public GameObject regisbox;
    
 void Start()
     {
@@ -178,7 +179,7 @@ void Start()
              
                 PostToDatabase(true, response.idToken);
                 UpdateErrorMessage("Success");
-                CancelButton();
+                regisbox.SetActive(true);
                 
             }).Catch(error =>
         {
