@@ -16,12 +16,24 @@ public class AddmemberManager : MonoBehaviour
     public static string passwordMember;
     public Dropdown dropDown;
 
-    public int count=0;
+    public static int count=0;
    // PlayerScores user = new PlayerScores();
     [SerializeField]
     private Button[] buttons;
+ DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+    void Start()
+    {
+          //reference.Child(LoginManager.localId).Child("m_count").SetValueAsync(count);
+       
+     SaveAndRetrieveData();
+        //  DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
+        //DatabaseReference mUsersRef = mRootRef.child("users");
+        // DatabaseReference mMessagesRef = mRootRef.child("messages");
+        // mUsersRef.child("id-12345").setValue("Jirawatee");
+       // 
+        // FirebaseDatabase.DefaultInstance.GetReference("mbk5bIOVI4SbzdJ7X84VCRo9qDf2").ValueChanged += HandleValueChanged;
+    }
 
-    
 
    public void CancelButton()
     {
@@ -31,21 +43,72 @@ public class AddmemberManager : MonoBehaviour
         //dropDown.value =0;
  
     }
-    public void OnSubmit()
+
+    public void SaveAndRetrieveData() //from the database (server)...
     {
-        nameMember = nameField.text;
-        passwordMember = passworField.text;
-        PostToDatabase();
-        //test.text = "Post Data ";
-       count++;
-       AddButtons();
+    //store the data to the server...
+    
+    //Retrieve the data and convert it to string...
+         FirebaseDatabase.DefaultInstance.GetReference(LoginManager.localId).GetValueAsync().ContinueWith(task => 
+    {  
+        DataSnapshot snapshot = task.Result;
+        string ss = snapshot.Child("m_count").Value.ToString();
+        print(ss);
+        print("data retrieved");
+        count=Int32.Parse(ss);
+    });  
+}
+  public int GetCount() //from the database (server)...
+    {
+    //store the data to the server...
+    
+    //Retrieve the data and convert it to string...
+         FirebaseDatabase.DefaultInstance.GetReference(LoginManager.localId).GetValueAsync().ContinueWith(task => 
+    {  
+        DataSnapshot snapshot = task.Result;
+        string ss = snapshot.Child("m_count").Value.ToString();
+        print(ss);
+        print("data retrieved");
+        count=Int32.Parse(ss);
+
+    });  
+    return count;
+}
+   
+    public void OnSubmit()
+    { 
         
+        // DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
+        // DatabaseReference mUsersRef = mRootRef.child("users");
+        // DatabaseReference mMessagesRef = mRootRef.child("messages");
+        // mUsersRef.child("id-12345").setValue("Jirawatee");
+ FirebaseDatabase.DefaultInstance.GetReference(LoginManager.localId).GetValueAsync().ContinueWith(task => 
+    {  
+        DataSnapshot snapshot = task.Result;
+        string ss = snapshot.Child("m_count").Value.ToString();
+        print(ss);
+        print("data retrieved");
+        count=Int32.Parse(ss);
+    });  
+    
+    nameMember = nameField.text;
+    passwordMember = passworField.text;
+    PostToDatabase();
+    test.text = "Post Data ";
+    count++;
+      reference.Child(LoginManager.localId).Child("m_count").SetValueAsync(count);
+    AddButtons();
+       //SaveAndRetrieveData() ;
     }
+
+
     public void AddButtons(){
        
-        buttons[count].gameObject.SetActive(true); 
-        buttons[count].GetComponentInChildren<Text>().text = ""+nameMember;
 
+       for(int i=0;i<GetCount();i++){
+        buttons[i].gameObject.SetActive(true); 
+        buttons[i].GetComponentInChildren<Text>().text = ""+i; //****** i member name ?
+       }
     }
     private void PostToDatabase()
     {
@@ -57,12 +120,7 @@ public class AddmemberManager : MonoBehaviour
     }
     // Start is called before the first frame update
     
-    void Start()
-    {
-       // DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
-        // FirebaseDatabase.DefaultInstance.GetReference("mbk5bIOVI4SbzdJ7X84VCRo9qDf2").ValueChanged += HandleValueChanged;
-    }
-
+    
     // Update is called once per frame
     void Update()
     {

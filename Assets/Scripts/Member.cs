@@ -6,16 +6,16 @@ using System;
 public class Member 
 
 {  
-     public string userName;
-    public string password;
+     public string m_name;
+    public string m_password;
+    public int no;
     // Start is called before the first frame update
    public Member()
     {
        // userName = PlayerScores.playerName;
        // userScore = PlayerScores.playerScore;
-       
-        userName = AddmemberManager.nameMember;
-        
-        password = AddmemberManager.passwordMember;
+       no=AddmemberManager.count;
+        m_name = AddmemberManager.nameMember;
+        m_password = AddmemberManager.passwordMember;
     }
 }

@@ -127,9 +127,12 @@ void Start()
                         {
                             idToken = response.idToken;
                             localId = response.localId;
+                            uemail=email;
+                             Debug.Log(uemail);
+                           // uusername=RegisterManager.u_username ;
                             GetUsername();
                             testLogin.text ="Login Success";
-                             Invoke("Login", 1);
+                            Invoke("Login", 1);
                         }
                         else
                         {
@@ -148,12 +151,15 @@ void Start()
     
     private void GetUsername()
     {
-        RestClient.Get<User>(databaseURL + "/" + localId + ".json?auth=" + idToken).Then(response =>
-        {
-          // testLogin.text = response.userName;
-            Debug.Log("GetUsername");
-            
-        });
+        FirebaseDatabase.DefaultInstance.GetReference(localId).GetValueAsync().ContinueWith(task => 
+    {  
+        DataSnapshot snapshot = task.Result;
+        string ss = snapshot.Child(uusername).Child("password").Value.ToString();
+        print(ss);
+        print("data retrieved");
+         Debug.Log(uusername);
+    });        
+        
     }
     
     // private void GetLocalId(){

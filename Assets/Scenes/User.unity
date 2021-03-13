@@ -5672,12 +5672,15 @@ MonoBehaviour:
   passworField: {fileID: 1230273506}
   test: {fileID: 387067055}
   dropDown: {fileID: 0}
-  count: 0
   buttons:
   - {fileID: 689800964}
   - {fileID: 1303546320}
   - {fileID: 57580561}
   - {fileID: 587177433}
+  - {fileID: 94648706}
+  - {fileID: 1090074222}
+  - {fileID: 953516654}
+  - {fileID: 487949424}
 --- !u!4 &1582431160
 Transform:
   m_ObjectHideFlags: 0
