@@ -16,16 +16,28 @@ public class AddmemberManager : MonoBehaviour
     public static string passwordMember;
     public Dropdown dropDown;
 
-    public static int count=0;
+    public static int count;
    // PlayerScores user = new PlayerScores();
     [SerializeField]
     private Button[] buttons;
  DatabaseReference reference = FirebaseDatabase.DefaultInstance.RootReference;
+
+ private void Awake(){
+
+    
+ }
     void Start()
     {
           //reference.Child(LoginManager.localId).Child("m_count").SetValueAsync(count);
-       
-     SaveAndRetrieveData();
+   
+        
+        GetCount();
+
+      print(count+"Start");
+     // if(count!=0){
+        Invoke("AddButtons", 1); 
+     // }
+    
         //  DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
         //DatabaseReference mUsersRef = mRootRef.child("users");
         // DatabaseReference mMessagesRef = mRootRef.child("messages");
@@ -33,8 +45,13 @@ public class AddmemberManager : MonoBehaviour
        // 
         // FirebaseDatabase.DefaultInstance.GetReference("mbk5bIOVI4SbzdJ7X84VCRo9qDf2").ValueChanged += HandleValueChanged;
     }
+    
+
+ public void LogoutUser(){
+    SceneManager.LoadScene("Login");
 
 
+    }
    public void CancelButton()
     {
         // UserUI.SetActive(true);
@@ -53,8 +70,8 @@ public class AddmemberManager : MonoBehaviour
     {  
         DataSnapshot snapshot = task.Result;
         string ss = snapshot.Child("m_count").Value.ToString();
-        print(ss);
-        print("data retrieved");
+       // print(ss);
+        print(ss+"SaveAndRetrieveData");
         count=Int32.Parse(ss);
     });  
 }
@@ -67,8 +84,8 @@ public class AddmemberManager : MonoBehaviour
     {  
         DataSnapshot snapshot = task.Result;
         string ss = snapshot.Child("m_count").Value.ToString();
-        print(ss);
-        print("data retrieved");
+       // print(ss);
+        print(ss+" GetCount");
         count=Int32.Parse(ss);
 
     });  
@@ -82,14 +99,7 @@ public class AddmemberManager : MonoBehaviour
         // DatabaseReference mUsersRef = mRootRef.child("users");
         // DatabaseReference mMessagesRef = mRootRef.child("messages");
         // mUsersRef.child("id-12345").setValue("Jirawatee");
- FirebaseDatabase.DefaultInstance.GetReference(LoginManager.localId).GetValueAsync().ContinueWith(task => 
-    {  
-        DataSnapshot snapshot = task.Result;
-        string ss = snapshot.Child("m_count").Value.ToString();
-        print(ss);
-        print("data retrieved");
-        count=Int32.Parse(ss);
-    });  
+    GetCount();
     
     nameMember = nameField.text;
     passwordMember = passworField.text;

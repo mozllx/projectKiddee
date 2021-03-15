@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 87179031}
   - component: {fileID: 87179030}
   m_Layer: 5
-  m_Name: Text
+  m_Name: star
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1123,7 +1123,7 @@ GameObject:
   - component: {fileID: 280099173}
   - component: {fileID: 280099172}
   m_Layer: 5
-  m_Name: Text
+  m_Name: logout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5810,6 +5810,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1582431159}
+        m_MethodName: LogoutUser
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1612229616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6544,7 +6555,7 @@ GameObject:
   - component: {fileID: 1896613665}
   - component: {fileID: 1896613664}
   m_Layer: 5
-  m_Name: Text
+  m_Name: add
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6968,7 +6979,7 @@ GameObject:
   - component: {fileID: 1982762586}
   - component: {fileID: 1982762585}
   m_Layer: 5
-  m_Name: Text
+  m_Name: delete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

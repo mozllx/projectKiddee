@@ -132,7 +132,7 @@ void Start()
                            // uusername=RegisterManager.u_username ;
                             GetUsername();
                             testLogin.text ="Login Success";
-                            Invoke("Login", 1);
+                            Login();
                         }
                         else
                         {
