@@ -19,12 +19,20 @@ public class AddmemberManager : MonoBehaviour
     public static string nameMember;
     public static string passwordMember;
     
-    ArrayList nameList = new ArrayList();
-    ArrayList nameList2 = new ArrayList();
+     ArrayList nameList = new ArrayList();
+     ArrayList nameList2 = new ArrayList();
+     ArrayList nameList3 = new ArrayList();
+
+    ArrayList keyList = new ArrayList();
+
     public static int count;
+    public string buttonKey;
+    public int buttonName;
+
 
     [SerializeField]
     private Button[] buttons;
+    private Button[] remove;
     private DatabaseReference reference;
     
     private void Awake()
@@ -40,18 +48,23 @@ public class AddmemberManager : MonoBehaviour
         GetCount();
         print(count+"Start");
         Invoke("AddButtons", 2); 
-    
+
+         // AddButtons();
         FirebaseDatabase.DefaultInstance.GetReference(LoginManager.localId) 
        // หากข้อมูลมีการเปลี่ยนแหลงให้ทำการอ่านและแสดง
        .ValueChanged += HandleValueChanged;
        
-        
     }
+
     
 
     public void LogoutUser()
     {
          SceneManager.LoadScene("Login");
+    }
+      public void StarCollections()
+    {
+         SceneManager.LoadScene("StarCollection");
     }
     public void CancelButton()
     {
@@ -100,15 +113,17 @@ public class AddmemberManager : MonoBehaviour
    // test.text = "Post Data ";
     count++;
       reference.Child(LoginManager.localId).Child("m_count").SetValueAsync(count);
-      Invoke("AddButtons2", 2); 
+      //StartCoroutine("Wait");
+      //AddButtons2();
+     Invoke("AddButtons2", 2); 
        //SaveAndRetrieveData() ;
     }
 
 
     public void AddButtons(){
        
-        
-       for(int i=0;i<GetCount();i++){
+     //StartCoroutine("Wait");
+       for(int i=0;i<count;i++){
         buttons[i].gameObject.SetActive(true); 
         buttons[i].GetComponentInChildren<Text>().text = ""+nameList[i]; //****** i member name ?
        
@@ -117,15 +132,9 @@ public class AddmemberManager : MonoBehaviour
        
         
     }
-     public void AddButtons2(){
-      
-    
-        // if(count==1){
-        
-        // buttons[0].gameObject.SetActive(true); 
-        // buttons[0].GetComponentInChildren<Text>().text = ""+nameList2[0]; //****** i member name ?
-
-        // }
+   public void AddButtons2(){
+     //   StartCoroutine("Wait");
+         // Wait();
         print("AddButtons2 "+count);
        for(int i=0;i<nameList2.Count;i++){
         
@@ -133,23 +142,61 @@ public class AddmemberManager : MonoBehaviour
         buttons[count-1].GetComponentInChildren<Text>().text = ""+nameList2[i]; //****** i member name ?
        
        }
+
+       
         //count++;
-       for(int i = 0 ; i < nameList2.Count; i++){
-         Debug.Log("nameList2 "+nameList2[i] + ", ");
+//        for(int i = 0 ; i < nameList2.Count; i++){
+//          Debug.Log("nameList2 "+nameList2[i] + ", ");
+
+//     }
+        
+    }
+ public void ChangeButtons(){
+       
+    // StartCoroutine("Wait");
+       
+        
+         for(int i=0;i<GetCount();i++){
+         buttons[i].gameObject.SetActive(true); 
+          buttons[i].GetComponentInChildren<Text>().text = ""+nameList3[i]; //****** i member name ?
+       
+       }
+      
+    }
+     public void Remove()
+     {
+        //     nameList.Clear();
+        //  RaadAllData();
+          nameList3.RemoveAt(buttonName);
+          for(int i = 0 ; i < nameList3.Count; i++){
+         print("nameList3 "+nameList3[i] + ", ");
 
     }
+       
+         for(int i=0;i<GetCount();i++){
+        buttons[i].gameObject.SetActive(false); 
+       // buttons[i].GetComponentInChildren<Text>().text = ""+nameList[i]; //****** i member name ?
+       
+       }
+       
         
+              
+         Invoke("ChangeButtons", 2); 
+              
+         
+       
+            
+     }
+    IEnumerator Wait(){
+
+          yield return new WaitForSeconds(2f);
+
+
     }
     public void WriteAllData()
     {
         
-       // Member member = new Member();
-        //Debug.Log(message:$"======================>{LoginManager.localId}");
-        
-   // RestClient.Put("https://project-75a5c-default-rtdb.firebaseio.com/" + LoginManager.localId + "/"+nameMember+ ".json", member);
-    
-    // Start is called before the first frame update
-     // ทำการเขียนเขียนข้อมูลว่างๆ เพื่อนำ Key มาอ้างอิง และทำการ Update ข้อมูล
+       
         string key = reference.Child(LoginManager.localId).Push().Key;
         Dictionary<string, Object> childUpdates = new Dictionary<string, Object>();
         // เขียนข้อมูลลง Model
@@ -158,7 +205,7 @@ public class AddmemberManager : MonoBehaviour
         mData.m_password = passworField.text;
         mData.no = count;
         mData.m_name = nameField.text;
-         nameList2.Add(nameField.text);
+          nameList2.Add(nameField.text);
         string json = JsonUtility.ToJson(mData);
         // เขียนข้อมูลลง Firebase
         reference.Child(LoginManager.localId).Child(key).SetRawJsonValueAsync(json);
@@ -193,18 +240,22 @@ public class AddmemberManager : MonoBehaviour
     {
         string j = snapshot.Child(key).GetRawJsonValue();
         Member u = JsonUtility.FromJson<Member>(j);
-       // Debug.Log(u.no+" "+u.m_name+" "+u.m_password);
-      // Debug.Log(key);
+          Debug.Log(u.no+" "+u.m_name+" "+u.m_password);
+        //Debug.Log("key "+key);
        getNameMember(u.m_name);
+       if(!keyList.Contains(key)&&!key.Contains("User")){
+        getKeyMember(key);
+       }
+       
     }
     // Update is called once per frame
     void Update()
     {
-        
+        GetCount();
     }
     public void dddddd(){
     for(int i = 0 ; i < nameList.Count; i++){
-         print("nameList "+nameList[i] + ", ");
+         print("nameList "+nameList[i]);
 
     }
      }
@@ -212,16 +263,48 @@ public class AddmemberManager : MonoBehaviour
     {
 
         nameList.Add(name);
+        nameList3.Add(name);
         //nameMem=name;
          
       
     }
-     
-//       void HandleValueChanged(object sender, ValueChangedEventArgs args) {
-//   if (args.DatabaseError != null) {
-//     Debug.LogError(args.DatabaseError.Message);
-//     return;
-//   }
-//   Debug.Log(args.Snapshot.Child("userName").Value);
-// }
+    void getKeyMember(string key)
+    {
+
+        keyList.Add(key);
+        
+         
+    }
+   
+    public void OnClicked(Button button)
+    {
+        nameList3.Clear();
+      RaadAllData();
+        if(button.name=="0"){
+             buttonName=0;   
+             buttonKey =""+keyList[0];
+           
+        }else if(button.name=="1"){
+             buttonName=1;   
+            buttonKey =""+keyList[1];
+           
+        }else if(button.name=="2"){
+             buttonName=2;   
+            buttonKey =""+keyList[2];
+           
+        }else if(button.name=="3"){
+             buttonName=3;   
+             buttonKey =""+keyList[3];
+           
+        }else if(button.name=="4"){
+             buttonName=4;   
+             buttonKey =""+keyList[4];
+           
+        }
+        
+   
+
+    }
+
+
 }

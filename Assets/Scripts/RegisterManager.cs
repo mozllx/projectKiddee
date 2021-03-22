@@ -102,7 +102,7 @@ void Start()
         }
         
 
-         RestClient.Put(databaseURL + "/" + localId +  "/"+u_username+ ".json?auth=" + idTokenTemp, user);
+         RestClient.Put(databaseURL + "/" + localId +  "/"+"User"+ ".json?auth=" + idTokenTemp, user);
     }
     
     
