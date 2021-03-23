@@ -19,6 +19,10 @@ public class StarCollection : MonoBehaviour
     public static int count;
     public static string name;
     private DatabaseReference reference;
+
+    [Header("UserData")]
+    public GameObject scoreElement;
+    public Transform scoreboardContent;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +36,10 @@ public class StarCollection : MonoBehaviour
     {
         
     }
-
+    public void ScoreboardButton()
+    {        
+       // StartCoroutine(LoadScoreboardData());
+    }
     
      public void RaadAllData()
     {
@@ -65,34 +72,12 @@ public class StarCollection : MonoBehaviour
 
 
          
-        //Debug.Log("key "+key);
-      // getNameMember(u.m_name);
-      // if(!keyList.Contains(key)&&!key.Contains("User")){
-       // getKeyMember(key);
-       //}
+       
        
     }
-    // Update is called once per frame
+
+
+
+
    
-    // public void dddddd(){
-    // for(int i = 0 ; i < nameList.Count; i++){
-    //      print("nameList "+nameList[i] + ", ");
-
-    // }
-    //  }
-    //  void getNameMember(string name)
-    // {
-
-    //     nameList.Add(name);
-    //     //nameMem=name;
-         
-      
-    // }
-    // void getKeyMember(string key)
-    // {
-
-    //     keyList.Add(key);
-        
-         
-    // }
 }
