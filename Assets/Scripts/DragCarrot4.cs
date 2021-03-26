@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class hamburger : MonoBehaviour
+public class DragCarrot4 : MonoBehaviour
 {
-
-   [SerializeField]
-    private Transform hamburgerPlace;
+      [SerializeField]
+    private Transform carrotPlace;
     private Vector2 initalPosition;
     private float deltaX,deltaY;
     public static bool locked;
@@ -33,6 +32,7 @@ public class hamburger : MonoBehaviour
                 deltaX = touchPos.x-transform.position.x;
                 deltaY = touchPos.y-transform.position.y;
                  Dragging = true;
+
             }
             break;
 
@@ -47,10 +47,10 @@ public class hamburger : MonoBehaviour
              case TouchPhase.Ended:
                          Dragging = false;
 
-            if(Mathf.Abs(transform.position.x-hamburgerPlace.position.x)<=0.5f&&
-               Mathf.Abs(transform.position.y-hamburgerPlace.position.y)<=0.5f)
+            if(Mathf.Abs(transform.position.x-carrotPlace.position.x)<=0.5f&&
+               Mathf.Abs(transform.position.y-carrotPlace.position.y)<=0.5f)
             {
-                transform.position = new Vector2(hamburgerPlace.position.x,hamburgerPlace.position.y);
+                transform.position = new Vector2(carrotPlace.position.x,carrotPlace.position.y);
                 locked=true;
                 
 
@@ -61,7 +61,7 @@ public class hamburger : MonoBehaviour
             }
             break;
         }
-        if(Dragging)
+         if(Dragging)
         {
             transform.position = new Vector2(touchPos.x-deltaX,touchPos.y-deltaY);
         }
