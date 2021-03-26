@@ -9,7 +9,7 @@ public class watermalon : MonoBehaviour
     private Vector2 initalPosition;
     private float deltaX,deltaY;
     public static bool locked;
-
+  private bool Dragging =false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,19 +31,21 @@ public class watermalon : MonoBehaviour
             {
                 deltaX = touchPos.x-transform.position.x;
                 deltaY = touchPos.y-transform.position.y;
-
+                 Dragging = true;
             }
             break;
 
-            case TouchPhase.Moved:
-            if(GetComponent<Collider2D>()==Physics2D.OverlapPoint(touchPos))
-            {
-                transform.position = new Vector2(touchPos.x-deltaX,touchPos.y-deltaY);
+            // case TouchPhase.Moved:
+            // if(GetComponent<Collider2D>()==Physics2D.OverlapPoint(touchPos))
+            // {
+            //     transform.position = new Vector2(touchPos.x-deltaX,touchPos.y-deltaY);
 
-            }
-            break;
+            // }
+            // break;
 
              case TouchPhase.Ended:
+                         Dragging = false;
+
             if(Mathf.Abs(transform.position.x-watermalonPlace.position.x)<=0.5f&&
                Mathf.Abs(transform.position.y-watermalonPlace.position.y)<=0.5f)
             {
@@ -57,6 +59,10 @@ public class watermalon : MonoBehaviour
                  transform.position = new Vector2(initalPosition.x,initalPosition.y);
             }
             break;
+        }
+        if(Dragging)
+        {
+            transform.position = new Vector2(touchPos.x-deltaX,touchPos.y-deltaY);
         }
         }
     }

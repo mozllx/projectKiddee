@@ -600,7 +600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &211883245
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1012,7 +1012,7 @@ Animator:
   m_GameObject: {fileID: 324540757}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e15d3a9c427c7f24b98a3d6a4a2a31a7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 01973ad3e8e78e34086e2e27a35503fd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1621,7 +1621,7 @@ Animator:
   m_GameObject: {fileID: 538461430}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ee7a2de58be9e5d42b3673b472220296, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2697,6 +2697,7 @@ GameObject:
   - component: {fileID: 1018040408}
   - component: {fileID: 1018040407}
   - component: {fileID: 1018040406}
+  - component: {fileID: 1018040409}
   m_Layer: 0
   m_Name: unicon
   m_TagString: Untagged
@@ -2756,7 +2757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292d59ad3ec0e324594f875d33d68c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniconPlace: {fileID: 0}
+  uniconPlace: {fileID: 1318852503}
 --- !u!212 &1018040408
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2807,6 +2808,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1018040409
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018040404}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58293bf8a32894541ae29059a477bd46, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1129622651
 GameObject:
   m_ObjectHideFlags: 0
@@ -3316,7 +3336,7 @@ Animator:
   m_GameObject: {fileID: 1192167971}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 175f1122614ae2a4cab4c6e836fbda0a, type: 2}
+  m_Controller: {fileID: 9100000, guid: b1d67a3d37e3743468d57238af64ca8a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4345,6 +4365,7 @@ GameObject:
   - component: {fileID: 1699473038}
   - component: {fileID: 1699473037}
   - component: {fileID: 1699473036}
+  - component: {fileID: 1699473039}
   m_Layer: 0
   m_Name: tomato
   m_TagString: Untagged
@@ -4378,7 +4399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1a27190dc04c846ae59eab38c3084e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tomatoPlace: {fileID: 0}
+  tomatoPlace: {fileID: 1393461580}
 --- !u!61 &1699473037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4455,6 +4476,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1699473039
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699473034}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5c1830ea92747a408aa6c1629770cb3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1731998107
 GameObject:
   m_ObjectHideFlags: 0
@@ -4561,6 +4601,7 @@ GameObject:
   - component: {fileID: 1746401026}
   - component: {fileID: 1746401025}
   - component: {fileID: 1746401024}
+  - component: {fileID: 1746401027}
   m_Layer: 0
   m_Name: hamburger
   m_TagString: Untagged
@@ -4620,7 +4661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d3c85aab23b674682ed62ce5986ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hamburgerPlace: {fileID: 0}
+  hamburgerPlace: {fileID: 56562155}
 --- !u!212 &1746401026
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4671,6 +4712,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1746401027
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746401022}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aff098221ad18c344a48c188bc50368f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1790278018
 GameObject:
   m_ObjectHideFlags: 0
@@ -4889,7 +4949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1892422783
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5421,6 +5481,7 @@ GameObject:
   - component: {fileID: 2121689857}
   - component: {fileID: 2121689856}
   - component: {fileID: 2121689855}
+  - component: {fileID: 2121689858}
   m_Layer: 0
   m_Name: watermalon
   m_TagString: Untagged
@@ -5480,7 +5541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c97a6a1aab87294c8fe508fbea1b5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  watermalonPlace: {fileID: 0}
+  watermalonPlace: {fileID: 1807710758}
 --- !u!212 &2121689857
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5531,3 +5592,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2121689858
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121689853}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9744f57a0c1189c42a057d1249b271c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

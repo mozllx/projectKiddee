@@ -26,7 +26,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/New Scene 1.unity
     guid: 271a7ddea09d2714289985ba678a4b1c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/HelpOthers.unity
-    guid: 42010b4739ecc5347a839d5196fc1bbc
+    guid: 5d269dfd384ab0c4d88b3e52cbd64b97
   m_configObjects: {}
