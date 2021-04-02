@@ -1,7 +1,16 @@
 fileFormatVersion: 2
-guid: 534a2cf89bfb146489f601e3c1708fec
+guid: afaa3c93e02a33f4e97431d2bcfc9594
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6269820959684594482
+    second: Owl Education Teacher2_0
+  - first:
+      213: -7487139904859438201
+    second: Owl Education Teacher2_1
+  - first:
+      213: -5481982782363259579
+    second: Owl Education Teacher2_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 3
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +130,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Owl Education Teacher2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 125
+        width: 1001
+        height: 804
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b8c43a1f0e20750800000000000000
+      internalID: 6269820959684594482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Owl Education Teacher2_1
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 585
+        width: 626
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7838333dce5581890800000000000000
+      internalID: -7487139904859438201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Owl Education Teacher2_2
+      rect:
+        serializedVersion: 2
+        x: 1053
+        y: 0
+        width: 514
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54d2e6844b51ce3b0800000000000000
+      internalID: -5481982782363259579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
