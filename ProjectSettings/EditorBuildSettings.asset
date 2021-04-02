@@ -45,6 +45,12 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+<<<<<<< HEAD
+    path: Assets/SPRITES/helpOther/HelpOthers.unity
+    guid: b7ad3e6710587754086eccaf1f563e8b
+  - enabled: 0
+=======
+>>>>>>> 98f509ccc10d0f0f1504830959d465e4dfe22741
     path: Assets/SPRITES/KeepInOrder/KeepInOrder.unity
     guid: 52b4b0e4a920267429de91c654e83100
   m_configObjects: {}
