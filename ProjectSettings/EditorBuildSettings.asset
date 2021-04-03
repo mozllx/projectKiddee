@@ -4,53 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Login.unity
-    guid: 561abd758924238478d10fb6765c8be3
-  - enabled: 0
-    path: Assets/Scenes/User.unity
-    guid: 6c565aa83bd890d4eb4b54a26d681c8d
-  - enabled: 0
-    path: Assets/Scenes/Register.unity
-    guid: 48013e047792d3d47ab5104622ce3e45
-  - enabled: 0
-    path: Assets/Scenes/ChooseManu.unity
-    guid: 5418af635c0500240a0dd56bbb4f33ce
-  - enabled: 0
-    path: Assets/Scenes/StarCollection.unity
-    guid: 5622da1fb17662b42b52a3f9881d141b
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/New Scene 1.unity
-    guid: 271a7ddea09d2714289985ba678a4b1c
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/SPRITES/speking/Speaking.unity
-    guid: dddc948178c23a84f992c991c3b1db33
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/SPRITES/queue/queue.unity
-    guid: 5f5b1093ba0266f4799abf17d68729d4
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-<<<<<<< HEAD
-    path: Assets/SPRITES/helpOther/HelpOthers.unity
-    guid: b7ad3e6710587754086eccaf1f563e8b
-  - enabled: 0
-=======
->>>>>>> 98f509ccc10d0f0f1504830959d465e4dfe22741
-    path: Assets/SPRITES/KeepInOrder/KeepInOrder.unity
-    guid: 52b4b0e4a920267429de91c654e83100
+  m_Scenes: []
   m_configObjects: {}

@@ -12,7 +12,7 @@ public class inGame1 : MonoBehaviour
     {
         questionUI.SetActive(true);
         correctUI.SetActive(false);
-        incorrectUI.SetActive(false);
+        inCorrectUI.SetActive(false);
     }
 
     // Update is called once per frame
