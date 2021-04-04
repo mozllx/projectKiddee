@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Q1 : MonoBehaviour
 {
+    public GameObject questionUI;
     public GameObject correctUI;
     public GameObject inCorrectUI;
     // Start is called before the first frame update
     void Start()
     {
+        questionUI.SetActive(true);
         correctUI.SetActive(false);
         inCorrectUI.SetActive(false);
     }
@@ -17,33 +19,16 @@ public class Q1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dragS1.locked)
+        if (Q1DragS1.locked)
         {
+            questionUI.SetActive(false);
             correctUI.SetActive(true);
         }
-        if(dragS2.locked )
-        {
-            correctUI.SetActive(false);
-            inCorrectUI.SetActive(true);
-        }/*
-        if (dragS3.locked )
-        {
-            correctUI.SetActive(false);
+        if(Q1DragS2.locked || Q1DragS3.locked || Q1DragS4.locked)
+        { 
+            questionUI.SetActive(false);
             inCorrectUI.SetActive(true);
         }
-        if (dragS4.locked)
-        {
-            correctUI.SetActive(false);
-            inCorrectUI.SetActive(true);
-        }*/
-        /*if (hamburger.locked && watermalon.locked && unicon.locked && tomato.locked)
-        {
-            winText1.SetActive(true);
-        }
-        if (trash.locked && trash2.locked && trash3.locked && trash4.locked && trash5.locked && trash6.locked)
-        {
-            winText3.SetActive(true);
-        }*/
 
     }
     public void goToQ2()

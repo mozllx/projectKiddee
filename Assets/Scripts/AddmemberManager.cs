@@ -207,6 +207,7 @@ public class AddmemberManager : MonoBehaviour
         mData.m_name = nameField.text;
           nameList2.Add(nameField.text);
         string json = JsonUtility.ToJson(mData);
+        print("json "+json);
         // เขียนข้อมูลลง Firebase
         reference.Child(LoginManager.localId).Child(key).SetRawJsonValueAsync(json);
         

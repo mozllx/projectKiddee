@@ -11,7 +11,7 @@ public class queue : MonoBehaviour
     [SerializeField]
     private float delayBeforeLoadingHowto1 = 28f;
     [SerializeField]
-    private float delayBeforeLoadingHowto2 = 40f;
+    private float delayBeforeLoadingHowto2 = 45f;
     [SerializeField]
     private float timeElapsed;
     public GameObject bus1UI;
