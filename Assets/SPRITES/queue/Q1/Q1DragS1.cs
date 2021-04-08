@@ -6,7 +6,7 @@ public class Q1DragS1 : MonoBehaviour
 {
     [SerializeField]
     private Transform theBus;
-    private Vector2 initalPosition;
+    public static Vector2 initalPosition;
     private float deltaX, deltaY;
     public static bool locked;
     private bool Dragging = false;

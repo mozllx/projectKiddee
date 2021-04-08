@@ -28,6 +28,10 @@ public class Q1 : MonoBehaviour
         { 
             questionUI.SetActive(false);
             inCorrectUI.SetActive(true);
+            Q1DragS2.locked = false;
+            Q1DragS3.locked= false;
+            Q1DragS4.locked =false;
+            
         }
 
     }

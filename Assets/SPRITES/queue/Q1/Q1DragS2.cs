@@ -6,7 +6,9 @@ public class Q1DragS2 : MonoBehaviour
 {
     [SerializeField]
     private Transform theBus;
-    private Vector2 initalPosition;
+    public static Vector2 initalPosition;
+    public static Vector2 initalPosition2;
+
     private float deltaX, deltaY;
     public static bool locked;
     private bool Dragging = false;
@@ -14,6 +16,7 @@ public class Q1DragS2 : MonoBehaviour
     void Start()
     {
         initalPosition = transform.position;
+        initalPosition2 = transform.position;
     }
 
     // Update is called once per frame

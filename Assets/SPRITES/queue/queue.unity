@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 20301980}
   - component: {fileID: 20301979}
   - component: {fileID: 20301978}
+  - component: {fileID: 20301981}
   m_Layer: 0
   m_Name: st4
   m_TagString: Untagged
@@ -189,7 +190,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 20301976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd22593b34bc49b4abf80ca94a9752fe, type: 3}
+  m_Script: {fileID: 11500000, guid: e755d5518a9c2064caa0c6b682c0e0c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   theBus: {fileID: 1599764010}
@@ -243,6 +244,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &20301981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20301976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db4a005b5f70c14bbcb599eb55654b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theBus: {fileID: 1599764010}
 --- !u!1 &26742990
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,84 +531,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &103026251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 103026252}
-  - component: {fileID: 103026254}
-  - component: {fileID: 103026253}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &103026252
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103026251}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.94288695, y: 0.94288695, z: 0.94288695}
-  m_Children: []
-  m_Father: {fileID: 563487605}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 139, y: -182.00998}
-  m_SizeDelta: {x: -771.91864, y: -450.671}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &103026253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103026251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 396bc5d0badad7c47b5b253cbecc0a42, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E43\u0E2B\u0E21\u0E48"
---- !u!222 &103026254
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103026251}
-  m_CullTransparentMesh: 0
 --- !u!1 &116821867
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,8 +717,8 @@ GameObject:
   m_Component:
   - component: {fileID: 184916971}
   - component: {fileID: 184916972}
-  - component: {fileID: 184916974}
   - component: {fileID: 184916973}
+  - component: {fileID: 184916974}
   m_Layer: 0
   m_Name: st1
   m_TagString: Untagged
@@ -889,7 +825,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 184916970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3059820dc66f7c24eac544450e52d0a0, type: 3}
+  m_Script: {fileID: 11500000, guid: a90c55994e565d047a9f23a072caca7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   theBus: {fileID: 1599764010}
@@ -2062,7 +1998,6 @@ RectTransform:
   - {fileID: 1083987502}
   - {fileID: 1718982292}
   - {fileID: 420948914}
-  - {fileID: 103026252}
   - {fileID: 648565095}
   m_Father: {fileID: 1733342300}
   m_RootOrder: 5
@@ -2622,7 +2557,7 @@ RectTransform:
   m_Children:
   - {fileID: 242140015}
   m_Father: {fileID: 563487605}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5295,6 +5230,7 @@ GameObject:
   - component: {fileID: 1294410712}
   - component: {fileID: 1294410711}
   - component: {fileID: 1294410710}
+  - component: {fileID: 1294410713}
   m_Layer: 0
   m_Name: st3
   m_TagString: Untagged
@@ -5351,7 +5287,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1294410708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913552e5ecf0e4848ad2eb5b67cf3e24, type: 3}
+  m_Script: {fileID: 11500000, guid: ae5cf7b9c8f2ab64a9e2eeb921805b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   theBus: {fileID: 1599764010}
@@ -5405,6 +5341,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1294410713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294410708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a29f47ad185294f8c0c477ff777783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theBus: {fileID: 1599764010}
 --- !u!1 &1302248987
 GameObject:
   m_ObjectHideFlags: 0
@@ -8781,8 +8730,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1876296061}
   - component: {fileID: 1876296063}
-  - component: {fileID: 1876296064}
   - component: {fileID: 1876296062}
+  - component: {fileID: 1876296064}
   m_Layer: 0
   m_Name: st2
   m_TagString: Untagged
@@ -8889,7 +8838,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1876296060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6a3f7a26ade16f4ebc4eec00323c40b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d2c0a98951a3384f997dc3c8a8ecfa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   theBus: {fileID: 1599764010}
