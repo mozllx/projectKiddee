@@ -19,5 +19,11 @@ public class ChooseManu : MonoBehaviour
     public void DisciplineDailyManu()
     {
          SceneManager.LoadScene("DisciplineDaily");
+         
+    }
+      public void HelpOthersManu()
+    {
+         SceneManager.LoadScene("HelpOthers");
+         
     }
 }

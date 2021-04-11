@@ -20,6 +20,8 @@ public class Momtalk4 : MonoBehaviour
     private float delayBeforeLoadingStory5UI = 60f;
       [SerializeField]
     private float delayBeforeLoadingStory6UI = 70f;
+     [SerializeField]
+    private float delayBeforeLoadingStory7UI = 80f;
     // Start is called before the first frame update
     private float timeElapsed;
     private bool gamePaused = false;
@@ -31,6 +33,7 @@ public class Momtalk4 : MonoBehaviour
     public GameObject story4UI;
     public GameObject story5UI;
     public GameObject story6UI;
+    public GameObject story7UI;
     void Start()
     {
           momtalk4UI.SetActive(true);
@@ -41,6 +44,7 @@ public class Momtalk4 : MonoBehaviour
         story4UI.SetActive(false);
         story5UI.SetActive(false);
         story6UI.SetActive(false);
+         story7UI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -91,6 +95,12 @@ public class Momtalk4 : MonoBehaviour
         {
             story5UI.SetActive(false);
             story6UI.SetActive(true);
+
+        }
+        if (timeElapsed > delayBeforeLoadingStory7UI)
+        {
+            story6UI.SetActive(false);
+            story7UI.SetActive(true);
 
         }
     }
