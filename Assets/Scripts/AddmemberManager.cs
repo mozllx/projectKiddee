@@ -10,22 +10,31 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
 using Object = UnityEngine.Object;
+
+
 // using UnityEngine.object;
 public class AddmemberManager : MonoBehaviour
 {
+    public GameObject passwordAddmemberbox;
+    public GameObject Addmemberbox;
+
     public InputField nameField;
     public InputField passworField;
     public Text test;
+    public InputField passwordField;
+    public InputField passwordAddmemberField;
     public static string nameMember;
     public static string passwordMember;
     
      ArrayList nameList = new ArrayList();
      ArrayList nameList2 = new ArrayList();
      ArrayList nameList3 = new ArrayList();
+      ArrayList passwordList = new ArrayList();
 
     ArrayList keyList = new ArrayList();
 
     public static int count;
+    public string passwordUser;
     public string buttonKey;
     public int buttonName;
 
@@ -98,6 +107,7 @@ public class AddmemberManager : MonoBehaviour
         string ss = snapshot.Child("m_count").Value.ToString();
        // print(ss);
         //print(ss+" GetCount");
+        passwordUser = snapshot.Child("User").Child("password").Value.ToString();
         count=Int32.Parse(ss);
 
     });  
@@ -116,6 +126,7 @@ public class AddmemberManager : MonoBehaviour
       //StartCoroutine("Wait");
       //AddButtons2();
      Invoke("AddButtons2", 2); 
+     //dddddd();
        //SaveAndRetrieveData() ;
     }
 
@@ -167,36 +178,61 @@ public class AddmemberManager : MonoBehaviour
      {
         //     nameList.Clear();
         //  RaadAllData();
-          nameList3.RemoveAt(buttonName);
-          for(int i = 0 ; i < nameList3.Count; i++){
-         print("nameList3 "+nameList3[i] + ", ");
+        nameList3.RemoveAt(buttonName);
+        passwordList.RemoveAt(buttonName);
+        for(int i = 0 ; i < nameList3.Count; i++)
+        {
+            print("nameList3 "+nameList3[i] + ", ");
 
-    }
+        }
        
-         for(int i=0;i<GetCount();i++){
+        for(int i=0;i<GetCount();i++){
         buttons[i].gameObject.SetActive(false); 
        // buttons[i].GetComponentInChildren<Text>().text = ""+nameList[i]; //****** i member name ?
        
        }
-       
-        
-              
+           
          Invoke("ChangeButtons", 2); 
               
-         
-       
-            
      }
-    IEnumerator Wait(){
 
-          yield return new WaitForSeconds(2f);
+       public void CheckPasswordMember()
+     {
+         string p =""+passwordList[buttonName];
+         string pf =passwordField.text;
+         if(String.Equals(p,pf)){
+              print("pass");
+              SceneManager.LoadScene("ChooseManu");
 
-
+         }else{
+              print("not pass");
+         }
+        
+        
     }
+       public void CheckPasswordAddmember()
+     {
+           
+         //string p =""+passwordList[buttonName];
+         string pf =passwordAddmemberField.text;
+            print("passwordUser " +passwordUser);
+         if(String.Equals(passwordUser,pf)){
+            print("pass");
+            passwordAddmemberbox.SetActive(false);
+            Addmemberbox.SetActive(false);
+
+            OnSubmit();
+
+         }else{
+              print("not pass");
+         }
+        
+        
+    }
+  
     public void WriteAllData()
     {
         
-       
         string key = reference.Child(LoginManager.localId).Push().Key;
         Dictionary<string, Object> childUpdates = new Dictionary<string, Object>();
         // เขียนข้อมูลลง Model
@@ -246,6 +282,8 @@ public class AddmemberManager : MonoBehaviour
        getNameMember(u.m_name);
        if(!keyList.Contains(key)&&!key.Contains("User")){
         getKeyMember(key);
+        getpassswordMember(u.m_password);
+        
        }
        
     }
@@ -255,8 +293,8 @@ public class AddmemberManager : MonoBehaviour
         GetCount();
     }
     public void dddddd(){
-    for(int i = 0 ; i < nameList.Count; i++){
-         print("nameList "+nameList[i]);
+    for(int i = 0 ; i < passwordList.Count; i++){
+         print("passwordList "+passwordList[i]);
 
     }
      }
@@ -273,10 +311,15 @@ public class AddmemberManager : MonoBehaviour
     {
 
         keyList.Add(key);
-        
-         
+           
     }
-   
+   void getpassswordMember(string password)
+    {
+
+        passwordList.Add(password);
+           
+    }
+  
     public void OnClicked(Button button)
     {
         nameList3.Clear();
@@ -306,6 +349,7 @@ public class AddmemberManager : MonoBehaviour
    
 
     }
+     
 
 
 }

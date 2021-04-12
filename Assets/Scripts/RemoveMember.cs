@@ -120,11 +120,12 @@ public class RemoveMember : MonoBehaviour
     {
         string j = snapshot.Child(key).GetRawJsonValue();
         Member u = JsonUtility.FromJson<Member>(j);
-         // Debug.Log(u.no+" "+u.m_name+" "+u.m_password);
+       // Debug.Log(u.no+" "+u.m_name+" "+u.m_password);
         //Debug.Log("key "+key);
        getNameMember(u.m_name);
        if(!keyList.Contains(key)&&!key.Contains("User")){
         getKeyMember(key);
+        
        }
        
     }
@@ -216,7 +217,7 @@ public class RemoveMember : MonoBehaviour
 
                // print("buttonKey  "+buttonKey);
              // print("buttonName  "+buttonName);
-              Remove();
+            Remove();
             reference.Child(LoginManager.localId).Child(buttonKey).RemoveValueAsync();
             keyList.RemoveAt(buttonName);
             count--;
