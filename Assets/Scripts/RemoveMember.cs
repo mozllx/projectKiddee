@@ -17,11 +17,14 @@ public class RemoveMember : MonoBehaviour
      [SerializeField]
     private Button[] remove;
     private Button[] buttons;
+    public InputField passwordRemoveField;
 
     private DatabaseReference reference;
     // Start is called before the first frame update
 
     public static int count;
+    public string passwordUser;
+
     ArrayList keyList = new ArrayList();
     ArrayList nameList = new ArrayList();
     
@@ -53,7 +56,7 @@ public class RemoveMember : MonoBehaviour
        // print(ss);
         //print(ss+" GetCount");
         count=Int32.Parse(ss);
-
+    passwordUser = snapshot.Child("User").Child("password").Value.ToString();
     });  
     return count;
 }
@@ -210,6 +213,21 @@ public class RemoveMember : MonoBehaviour
         //});  
 
     }
+
+    public void CheckPasswordRemovemember()
+    {
+         //string p =""+passwordList[buttonName];
+         string pf =passwordRemoveField.text;
+           // print("passwordUser " +passwordUser);
+         if(String.Equals(passwordUser,pf)){
+            print("pass");
+           OnSubmitRemove();
+            
+         }else{
+              print("not pass");
+         } 
+    }
+  
      public void OnSubmitRemove()
     {       
         

@@ -15,14 +15,22 @@ using Object = UnityEngine.Object;
 // using UnityEngine.object;
 public class AddmemberManager : MonoBehaviour
 {
+     public GameObject remove1;
+     public GameObject remove2;
+     public GameObject remove3;
+
     public GameObject passwordAddmemberbox;
+    public GameObject passwordRemovememberbox;
+
     public GameObject Addmemberbox;
 
     public InputField nameField;
     public InputField passworField;
     public Text test;
     public InputField passwordField;
-    public InputField passwordAddmemberField;
+    public InputField passwordAddField;
+    public InputField passwordRemoveField;
+
     public static string nameMember;
     public static string passwordMember;
     
@@ -37,6 +45,7 @@ public class AddmemberManager : MonoBehaviour
     public string passwordUser;
     public string buttonKey;
     public int buttonName;
+    public static int gender;
 
 
     [SerializeField]
@@ -53,6 +62,14 @@ public class AddmemberManager : MonoBehaviour
     {
         reference = FirebaseDatabase.DefaultInstance.RootReference;
         FirebaseApp.GetInstance("https://project-75a5c-default-rtdb.firebaseio.com/");
+        
+         FirebaseDatabase.DefaultInstance.GetReference(LoginManager.localId).GetValueAsync().ContinueWith(task => 
+    {  
+        DataSnapshot snapshot = task.Result;
+        passwordUser = snapshot.Child("User").Child("password").Value.ToString();
+        string s = snapshot.Child("User").Child("gender").Value.ToString();
+        gender=Int32.Parse(s);
+    });  
         
         GetCount();
         print(count+"Start");
@@ -107,7 +124,10 @@ public class AddmemberManager : MonoBehaviour
         string ss = snapshot.Child("m_count").Value.ToString();
        // print(ss);
         //print(ss+" GetCount");
-        passwordUser = snapshot.Child("User").Child("password").Value.ToString();
+        // string s = snapshot.Child("User").Child("gender").Value.ToString();
+        // gender=Int32.Parse(s);
+        // print("s "+s);
+       
         count=Int32.Parse(ss);
 
     });  
@@ -211,23 +231,38 @@ public class AddmemberManager : MonoBehaviour
         
     }
        public void CheckPasswordAddmember()
-     {
+    {
            
          //string p =""+passwordList[buttonName];
-         string pf =passwordAddmemberField.text;
-            print("passwordUser " +passwordUser);
+         string pf =passwordAddField.text;
+          print("passwordUser " +passwordUser);
          if(String.Equals(passwordUser,pf)){
             print("pass");
-            passwordAddmemberbox.SetActive(false);
+           passwordAddmemberbox.SetActive(false);
             Addmemberbox.SetActive(false);
-
             OnSubmit();
-
          }else{
               print("not pass");
-         }
-        
-        
+         } 
+    }
+
+       public void CheckPasswordRemovemember()
+    {
+         //string p =""+passwordList[buttonName];
+         string pf =passwordRemoveField.text;
+           // print("passwordUser " +passwordUser);
+         if(String.Equals(passwordUser,pf)){
+            print("pass");
+            Remove();
+           remove1.SetActive(false);
+            remove2.SetActive(false);
+             remove3.SetActive(false);
+            passwordRemovememberbox.SetActive(false);
+
+            
+         }else{
+              print("not pass");
+         } 
     }
   
     public void WriteAllData()

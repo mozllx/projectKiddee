@@ -66,6 +66,31 @@ void Start()
        // SignupButton.onClick.AddListener(() => StartCoroutine(Register(emailText.text, passwordText.text, usernameText.text)));
        // SigninButton.onClick.AddListener(() => LoginAction(emailText.text, passwordText.text));
        FirebaseApp.GetInstance("https://project-75a5c-default-rtdb.firebaseio.com/");
+        var dropdown = transform.GetComponent<Dropdown>();
+        //dropdown.options.Clear();
+        List<string> items = new List<string>();
+        items.Add("หญิง");
+        items.Add("ชาย");
+        foreach(var item in items)
+        {
+            dropdown.options.Add(new Dropdown.OptionData(){text = item});
+        }
+        DropdownItemSelected(dropdown);
+        dropdown.onValueChanged.AddListener(delegate{ DropdownItemSelected(dropdown);});
+}
+void DropdownItemSelected(Dropdown dropdown)
+{
+    int index = dropdown.value;
+     if(index==0)
+        {
+            u_gender=0;
+        }
+        if(index==1)
+        {
+             u_gender=1;
+        }
+        
+        print("u_gender "+u_gender);
     
 }
  public void OnSubmit()
@@ -93,7 +118,7 @@ void Start()
         u_email = emailRegisterField.text;
         u_username = usernameRegisterField.text;
         u_password = passwordRegisterField.text;
-       // u_gender= dropDown.value;
+        u_gender= dropDown.value;
        // ugender=HandleGenderInput();
         
          if (idTokenTemp == "")
@@ -106,32 +131,6 @@ void Start()
     }
     
     
-
-    
-    // private void RetrieveFromDatabase()
-    // {
-    //     RestClient.Get<User>(databaseURL + "/" + getLocalId + ".json?auth=" + idToken).Then(response =>
-    //         {
-    //             user = response;
-                
-    //         });
-    // }
-    
-    public void HandleGenderInput(int val){
-        if(val==0)
-        {
-            u_gender=0;
-        }
-        if(val==1)
-        {
-             u_gender=1;
-        }
-        if(val==2)
-        {
-             u_gender=2;
-        }
-    }
-   
     public void CancelButton()
     {
         SceneManager.LoadScene("Login");

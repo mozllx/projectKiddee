@@ -1874,7 +1874,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '-'
+  m_Text: 
 --- !u!222 &637859545
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3839,7 +3839,7 @@ MonoBehaviour:
   usernameRegisterField: {fileID: 14415197}
   passwordRegisterField: {fileID: 839994787}
   passwordRegisterVerifyField: {fileID: 1631932876}
-  dropDown: {fileID: 0}
+  dropDown: {fileID: 1562647809}
   ErrorText: {fileID: 1366131499}
   regisbox: {fileID: 1268034344}
 --- !u!4 &1340441889
@@ -4125,6 +4125,7 @@ GameObject:
   - component: {fileID: 1562647811}
   - component: {fileID: 1562647810}
   - component: {fileID: 1562647809}
+  - component: {fileID: 1562647812}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -4201,13 +4202,7 @@ MonoBehaviour:
   m_ItemImage: {fileID: 0}
   m_Value: 0
   m_Options:
-    m_Options:
-    - m_Text: '-'
-      m_Image: {fileID: 0}
-    - m_Text: "\u0E2B\u0E0D\u0E34\u0E07"
-      m_Image: {fileID: 0}
-    - m_Text: "\u0E0A\u0E32\u0E22"
-      m_Image: {fileID: 0}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4250,6 +4245,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562647807}
   m_CullTransparentMesh: 0
+--- !u!114 &1562647812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562647807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ce983b0e15ecc4689daeb63ba73da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameRegisterField: {fileID: 0}
+  surnameRegisterField: {fileID: 0}
+  emailRegisterField: {fileID: 0}
+  usernameRegisterField: {fileID: 0}
+  passwordRegisterField: {fileID: 0}
+  passwordRegisterVerifyField: {fileID: 0}
+  dropDown: {fileID: 0}
+  ErrorText: {fileID: 0}
+  regisbox: {fileID: 0}
 --- !u!1 &1572517516
 GameObject:
   m_ObjectHideFlags: 0
