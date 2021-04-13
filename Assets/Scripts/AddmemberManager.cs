@@ -21,6 +21,8 @@ public class AddmemberManager : MonoBehaviour
 
     public GameObject passwordAddmemberbox;
     public GameObject passwordRemovememberbox;
+    public GameObject passwordLogoutbox;
+
 
     public GameObject Addmemberbox;
 
@@ -30,14 +32,16 @@ public class AddmemberManager : MonoBehaviour
     public InputField passwordField;
     public InputField passwordAddField;
     public InputField passwordRemoveField;
+    
+    public InputField passwordLogoutField;
 
     public static string nameMember;
     public static string passwordMember;
     
-     ArrayList nameList = new ArrayList();
-     ArrayList nameList2 = new ArrayList();
-     ArrayList nameList3 = new ArrayList();
-      ArrayList passwordList = new ArrayList();
+    public static ArrayList nameList = new ArrayList();
+    public static ArrayList nameList2 = new ArrayList();
+    public static ArrayList nameList3 = new ArrayList();
+    public static ArrayList passwordList = new ArrayList();
 
     ArrayList keyList = new ArrayList();
 
@@ -46,6 +50,7 @@ public class AddmemberManager : MonoBehaviour
     public string buttonKey;
     public int buttonName;
     public static int gender;
+    public static string name;
 
 
     [SerializeField]
@@ -69,6 +74,8 @@ public class AddmemberManager : MonoBehaviour
         passwordUser = snapshot.Child("User").Child("password").Value.ToString();
         string s = snapshot.Child("User").Child("gender").Value.ToString();
         gender=Int32.Parse(s);
+        string s2 = snapshot.Child("User").Child("userName").Value.ToString();
+        name=s2;
     });  
         
         GetCount();
@@ -260,6 +267,21 @@ public class AddmemberManager : MonoBehaviour
             passwordRemovememberbox.SetActive(false);
 
             
+         }else{
+              print("not pass");
+         } 
+    }
+
+        public void CheckPasswordLogout()
+    {
+         //string p =""+passwordList[buttonName];
+         string pf =passwordLogoutField.text;
+           // print("passwordUser " +passwordUser);
+         if(String.Equals(passwordUser,pf)){
+            print("pass");
+            passwordLogoutbox.SetActive(false);
+            SceneManager.LoadScene("Login");
+
          }else{
               print("not pass");
          } 

@@ -700,8 +700,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -144.9, y: 85.3}
-  m_SizeDelta: {x: 228.48904, y: 96.48236}
+  m_AnchoredPosition: {x: -129.45, y: 23.2}
+  m_SizeDelta: {x: 290.29318, y: 344.86517}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &882732748
 MonoBehaviour:
@@ -729,7 +729,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 5
     m_MaxSize: 50
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -941,7 +941,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 558172563}
-        m_MethodName: RaadAllData
+        m_MethodName: Display
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

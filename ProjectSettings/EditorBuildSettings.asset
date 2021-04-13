@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChooseManu.unity
     guid: 5418af635c0500240a0dd56bbb4f33ce
+  - enabled: 1
+    path: Assets/Scenes/StarCollection.unity
+    guid: 5622da1fb17662b42b52a3f9881d141b
   m_configObjects: {}
