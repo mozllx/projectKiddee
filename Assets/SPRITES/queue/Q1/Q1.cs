@@ -31,12 +31,15 @@ public class Q1 : MonoBehaviour
             Q1DragS2.locked = false;
             Q1DragS3.locked= false;
             Q1DragS4.locked =false;
-            
+
         }
 
     }
     public void goToQ2()
     {
         SceneManager.LoadScene("Q2");
+    }
+    public void tryQ1Again() {
+        SceneManager.LoadScene("TryQ1Again");
     }
 }
