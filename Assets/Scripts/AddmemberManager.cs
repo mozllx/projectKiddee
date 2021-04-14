@@ -224,7 +224,7 @@ public class AddmemberManager : MonoBehaviour
         
         buttons[count-1].gameObject.SetActive(true); 
         buttons[count-1].GetComponentInChildren<Text>().text = ""+nameList2[i]; //****** i member name ?
-        print("pic list : "+picList[i]);
+        print("AddButtons2 pic list : "+picList[i]);
         int c=Int32.Parse(""+picList[i]);
         if(c==0)
 

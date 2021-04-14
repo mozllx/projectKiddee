@@ -7,13 +7,13 @@ public class tryQ1 : MonoBehaviour
 {
     public GameObject questionUI;
     public GameObject correctUI;
-    public GameObject inCorrectUI;
+    //public GameObject inCorrectUI;
     // Start is called before the first frame update
     void Start()
     {
         questionUI.SetActive(true);
         correctUI.SetActive(false);
-        inCorrectUI.SetActive(false);
+        //inCorrectUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,8 +26,9 @@ public class tryQ1 : MonoBehaviour
         }
         if (Q1DragS2.locked || Q1DragS3.locked || Q1DragS4.locked)
         {
-            questionUI.SetActive(false);
-            inCorrectUI.SetActive(true);
+            //questionUI.SetActive(false);
+            //inCorrectUI.SetActive(true);
+            GotoinCorrectUI();
             Q1DragS2.locked = false;
             Q1DragS3.locked = false;
             Q1DragS4.locked = false;
@@ -39,8 +40,12 @@ public class tryQ1 : MonoBehaviour
     {
         SceneManager.LoadScene("Q2");
     }
-    public void tryQ1Again2()
+    public void tryQ1Again()
     {
-        SceneManager.LoadScene("TryQ1Again2");
+        SceneManager.LoadScene("Q1");
+    }
+    public void GotoinCorrectUI()
+    {
+        SceneManager.LoadScene("Incorrect");
     }
 }

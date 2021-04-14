@@ -9677,8 +9677,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1582431162}
-        m_MethodName: ChangeImg
+      - m_Target: {fileID: 1582431158}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10784,7 +10784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1316526564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12464,7 +12464,7 @@ MonoBehaviour:
   - {fileID: 1095049057}
   - {fileID: 368185303}
   - {fileID: 185399282}
-  - {fileID: 0}
+  - {fileID: 547396307}
   image: {fileID: 1095049057}
   image2: {fileID: 0}
   image3: {fileID: 0}
@@ -15790,7 +15790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2094268102
 RectTransform:
   m_ObjectHideFlags: 0

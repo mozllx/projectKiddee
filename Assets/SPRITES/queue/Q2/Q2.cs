@@ -24,7 +24,10 @@ public class Q2 : MonoBehaviour
         if (Q2DragS1.locked || Q2DragS3.locked || Q2DragS4.locked)
         {
             correctUI.SetActive(false);
-            inCorrectUI.SetActive(true);
+            GotoinCorrectUI();
+            Q1DragS2.locked = false;
+            Q1DragS3.locked = false;
+            Q1DragS4.locked = false;
         }
         /*if (hamburger.locked && watermalon.locked && unicon.locked && tomato.locked)
         {
@@ -36,8 +39,12 @@ public class Q2 : MonoBehaviour
         }*/
 
     }
-    /*public void goToQ2()
+    public void tryQ2Again()
     {
         SceneManager.LoadScene("Q2");
-    }*/
+    }
+    public void GotoinCorrectUI()
+    {
+        SceneManager.LoadScene("Incorrect");
+    }
 }
