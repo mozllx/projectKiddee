@@ -8,7 +8,7 @@ public class Member
 {  
     public string m_name;
     public string m_password;
-    public int no;
+    public int pic;
     // Start is called before the first frame update
 //    public Member()
 //     {

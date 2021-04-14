@@ -73,7 +73,7 @@ public class StarCollection : MonoBehaviour
         nameMember.Clear();
         string j = snapshot.Child(key).GetRawJsonValue();
         Member u = JsonUtility.FromJson<Member>(j);
-         Debug.Log(u.no+" "+u.m_name+" "+u.m_password);
+        // Debug.Log(u.no+" "+u.m_name+" "+u.m_password);
         // nameText.text=u.m_name.ToString();  
          if(!nameMember.Contains(u.m_name)){
         nameMember.Add(u.m_name);

@@ -10,6 +10,7 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
 using Object = UnityEngine.Object;
+using UnityEngine.EventSystems;
 
 
 // using UnityEngine.object;
@@ -18,6 +19,9 @@ public class AddmemberManager : MonoBehaviour
      public GameObject remove1;
      public GameObject remove2;
      public GameObject remove3;
+
+    public InputField mainInputField;
+        public InputField mainInputField2;
 
     public GameObject passwordAddmemberbox;
     public GameObject passwordRemovememberbox;
@@ -42,6 +46,7 @@ public class AddmemberManager : MonoBehaviour
     public static ArrayList nameList2 = new ArrayList();
     public static ArrayList nameList3 = new ArrayList();
     public static ArrayList passwordList = new ArrayList();
+    public static ArrayList picList = new ArrayList();
 
     ArrayList keyList = new ArrayList();
 
@@ -58,6 +63,17 @@ public class AddmemberManager : MonoBehaviour
     private Button[] remove;
     private DatabaseReference reference;
     
+    [Header("Profile pic")]
+    public GameObject[] Images;
+    public GameObject image;
+    public GameObject image2;
+    public GameObject image3;
+    public GameObject image4;
+    public Sprite sprite0;
+    public Sprite sprite1;
+    public Sprite sprite2;
+    public Sprite sprite3;
+
     private void Awake()
     {
 
@@ -86,9 +102,21 @@ public class AddmemberManager : MonoBehaviour
         FirebaseDatabase.DefaultInstance.GetReference(LoginManager.localId) 
        // หากข้อมูลมีการเปลี่ยนแหลงให้ทำการอ่านและแสดง
        .ValueChanged += HandleValueChanged;
-       
-    }
 
+        // if(mainInputField.text.Length==1){
+
+            //mainInputField.ActivateInputField();
+            
+        
+        // }
+            
+
+    }
+ void Update()
+    {
+        GetCount();
+       // mainInputField2.Select();
+    }
     
 
     public void LogoutUser()
@@ -164,7 +192,25 @@ public class AddmemberManager : MonoBehaviour
        for(int i=0;i<count;i++){
         buttons[i].gameObject.SetActive(true); 
         buttons[i].GetComponentInChildren<Text>().text = ""+nameList[i]; //****** i member name ?
-       
+         print("pic list : "+picList[i]);
+        int c=Int32.Parse(""+picList[i]);
+        if(c==0)
+
+        {
+            Images[i].GetComponent<Image>().sprite=sprite0;
+        }
+        else  if(c==1)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite1;
+        }
+        else  if(c==2)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite2;
+        }
+         else  if(c==3)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite3;
+        }
        }
        // dddddd();
        
@@ -178,8 +224,27 @@ public class AddmemberManager : MonoBehaviour
         
         buttons[count-1].gameObject.SetActive(true); 
         buttons[count-1].GetComponentInChildren<Text>().text = ""+nameList2[i]; //****** i member name ?
-       
+        print("pic list : "+picList[i]);
+        int c=Int32.Parse(""+picList[i]);
+        if(c==0)
+
+        {
+            Images[i].GetComponent<Image>().sprite=sprite0;
+        }
+        else  if(c==1)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite1;
+        }
+        else  if(c==2)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite2;
+        }
+         else  if(c==3)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite3;
+        }
        }
+
 
        
         //count++;
@@ -197,7 +262,24 @@ public class AddmemberManager : MonoBehaviour
          for(int i=0;i<GetCount();i++){
          buttons[i].gameObject.SetActive(true); 
           buttons[i].GetComponentInChildren<Text>().text = ""+nameList3[i]; //****** i member name ?
-       
+       int c=Int32.Parse(""+picList[i]);
+        if(c==0)
+
+        {
+            Images[i].GetComponent<Image>().sprite=sprite0;
+        }
+        else  if(c==1)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite1;
+        }
+        else  if(c==2)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite2;
+        }
+         else  if(c==3)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite3;
+        }
        }
       
     }
@@ -207,6 +289,7 @@ public class AddmemberManager : MonoBehaviour
         //  RaadAllData();
         nameList3.RemoveAt(buttonName);
         passwordList.RemoveAt(buttonName);
+        picList.RemoveAt(buttonName);
         for(int i = 0 ; i < nameList3.Count; i++)
         {
             print("nameList3 "+nameList3[i] + ", ");
@@ -296,7 +379,7 @@ public class AddmemberManager : MonoBehaviour
         Member mData = new Member();
         // mData.m_name = Random.Range(0f, 5f);
         mData.m_password = passworField.text;
-        mData.no = count;
+        mData.pic = ProfileMember.count;
         mData.m_name = nameField.text;
           nameList2.Add(nameField.text);
         string json = JsonUtility.ToJson(mData);
@@ -334,21 +417,18 @@ public class AddmemberManager : MonoBehaviour
     {
         string j = snapshot.Child(key).GetRawJsonValue();
         Member u = JsonUtility.FromJson<Member>(j);
-          Debug.Log(u.no+" "+u.m_name+" "+u.m_password);
+         // Debug.Log(u.pic+" "+u.m_name+" "+u.m_password);
         //Debug.Log("key "+key);
        getNameMember(u.m_name);
        if(!keyList.Contains(key)&&!key.Contains("User")){
         getKeyMember(key);
         getpassswordMember(u.m_password);
-        
+        getPicMember(u.pic);
        }
        
     }
     // Update is called once per frame
-    void Update()
-    {
-        GetCount();
-    }
+   
     public void dddddd(){
     for(int i = 0 ; i < passwordList.Count; i++){
          print("passwordList "+passwordList[i]);
@@ -374,6 +454,12 @@ public class AddmemberManager : MonoBehaviour
     {
 
         passwordList.Add(password);
+           
+    }
+    void getPicMember(int pic)
+    {
+
+        picList.Add(pic);
            
     }
   
