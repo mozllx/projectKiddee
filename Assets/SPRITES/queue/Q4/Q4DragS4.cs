@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Q2DragS3 : MonoBehaviour
+public class Q4DragS4 : MonoBehaviour
 {
     [SerializeField]
     private Transform theBus;

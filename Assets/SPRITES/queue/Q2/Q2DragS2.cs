@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Q2DragS2 : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField]
     private Transform theBus;
-    private Vector2 initalPosition;
+    public static Vector2 initalPosition;
     private float deltaX, deltaY;
     public static bool locked;
     private bool Dragging = false;
@@ -33,6 +32,7 @@ public class Q2DragS2 : MonoBehaviour
                         deltaX = touchPos.x - transform.position.x;
                         deltaY = touchPos.y - transform.position.y;
                         Dragging = true;
+
                     }
                     break;
 

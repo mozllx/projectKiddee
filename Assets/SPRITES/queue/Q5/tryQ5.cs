@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class tryQ1 : MonoBehaviour
+public class tryQ5 : MonoBehaviour
 {
     public GameObject questionUI;
     public GameObject correctUI;
@@ -19,31 +19,31 @@ public class tryQ1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Q1DragS1.locked)
+        if (Q5DragS4.locked)
         {
             questionUI.SetActive(false);
             correctUI.SetActive(true);
         }
-        if (Q1DragS2.locked || Q1DragS3.locked || Q1DragS4.locked)
+        if (Q5DragS1.locked || Q5DragS2.locked || Q5DragS3.locked)
         {
             GotoinCorrectUI();
-            Q1DragS2.locked = false;
-            Q1DragS3.locked = false;
-            Q1DragS4.locked = false;
+            Q5DragS1.locked = false;
+            Q5DragS2.locked = false;
+            Q5DragS3.locked = false;
 
         }
 
     }
-    public void goToQ2()
+    public void goToMain()
     {
-        SceneManager.LoadScene("Q2");
+        SceneManager.LoadScene("Q5");
     }
-    public void tryQ1Again()
+    public void tryQ4Again()
     {
-        SceneManager.LoadScene("Q1");
+        SceneManager.LoadScene("Q4");
     }
     public void GotoinCorrectUI()
     {
-        SceneManager.LoadScene("Q1Incorrect");
+        SceneManager.LoadScene("Q4Incorrect");
     }
 }
