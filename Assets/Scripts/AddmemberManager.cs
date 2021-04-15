@@ -27,16 +27,24 @@ public class AddmemberManager : MonoBehaviour
     public GameObject passwordRemovememberbox;
     public GameObject passwordLogoutbox;
 
-
+    [Header("Addmember")]
     public GameObject Addmemberbox;
-
+   
     public InputField nameField;
-    public InputField passworField;
+    public InputField passwordField1;
+    public InputField passwordField2;
+    public InputField passwordField3;
+    public InputField passwordField4;
     public Text test;
-    public InputField passwordField;
+     [Header("check password member")]
+    public InputField checkPasswordField1;
+    public InputField checkPasswordField2;
+    public InputField checkPasswordField3;
+    public InputField checkPasswordField4;
+
+    [Header("check password user")]
     public InputField passwordAddField;
     public InputField passwordRemoveField;
-    
     public InputField passwordLogoutField;
 
     public static string nameMember;
@@ -173,7 +181,7 @@ public class AddmemberManager : MonoBehaviour
     { 
         
     nameMember = nameField.text;
-    passwordMember = passworField.text;
+    passwordMember = passwordField1.text+""+passwordField2.text+""+passwordField3.text+""+passwordField4.text;
     WriteAllData();
    // test.text = "Post Data ";
     count++;
@@ -309,7 +317,7 @@ public class AddmemberManager : MonoBehaviour
        public void CheckPasswordMember()
      {
          string p =""+passwordList[buttonName];
-         string pf =passwordField.text;
+         string pf =checkPasswordField1.text+""+checkPasswordField2.text+""+checkPasswordField3.text+""+checkPasswordField4.text;
          if(String.Equals(p,pf)){
               print("pass");
               SceneManager.LoadScene("ChooseManu");
@@ -378,16 +386,16 @@ public class AddmemberManager : MonoBehaviour
         // เขียนข้อมูลลง Model
         Member mData = new Member();
         // mData.m_name = Random.Range(0f, 5f);
-        mData.m_password = passworField.text;
+        mData.m_password = passwordField1.text+""+passwordField2.text+""+passwordField3.text+""+passwordField4.text;
         mData.pic = ProfileMember.count;
         mData.m_name = nameField.text;
-          nameList2.Add(nameField.text);
+        nameList2.Add(nameField.text);
         string json = JsonUtility.ToJson(mData);
         print("json "+json);
         // เขียนข้อมูลลง Firebase
         reference.Child(LoginManager.localId).Child(key).SetRawJsonValueAsync(json);
         
-      
+         
       
 }
 
