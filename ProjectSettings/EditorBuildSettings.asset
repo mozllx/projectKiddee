@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/SPRITES/queue/queue.unity
+    guid: 5f5b1093ba0266f4799abf17d68729d4
+  - enabled: 1
+    path: Assets/SPRITES/queue/Q2/Q2.unity
+    guid: 3d54e37bd0b57cb4ea44cf1c1ed5e2a3
+  - enabled: 0
+    path: Assets/SPRITES/helpOther/HelpOthers.unity
+    guid: b7ad3e6710587754086eccaf1f563e8b
+  - enabled: 0
+    path: Assets/Scenes/Register.unity
+    guid: 48013e047792d3d47ab5104622ce3e45
+  - enabled: 0
+    path: Assets/Scenes/Login.unity
+    guid: 561abd758924238478d10fb6765c8be3
+  - enabled: 0
+    path: Assets/Scenes/User.unity
+    guid: 6c565aa83bd890d4eb4b54a26d681c8d
+  - enabled: 1
+    path: Assets/SPRITES/queue/Q2/Q2Incorrect.unity
+    guid: a89053fbb27a6ad429111d4551ddbf06
+  - enabled: 0
+    path: Assets/Scenes/ChooseManu.unity
+    guid: 5418af635c0500240a0dd56bbb4f33ce
+  - enabled: 1
+    path: Assets/SPRITES/queue/Q1/Q1.unity
+    guid: fcb56ed69c98d62498f3ec0c55749957
+  - enabled: 1
+    path: Assets/SPRITES/queue/Q3/Q3.unity
+    guid: 6f4002cb0255c0c439d12b2c0cc4fee2
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/SPRITES/queue/Q4/Q4Incorrect.unity
+    guid: 8871ccead22ef7e4585aa64112fa83c1
+  - enabled: 1
+    path: Assets/SPRITES/queue/Q5/Q5Incorrect.unity
+    guid: 293f1fd1584eac24fbbbce82d0f41b4c
+  - enabled: 1
+    path: Assets/SPRITES/queue/Q4/Q4.unity
+    guid: cc4ef880c505c5e45b00ae7825d005f1
+  - enabled: 1
+    path: Assets/SPRITES/queue/Q3/Q3Incorrect.unity
+    guid: 3e0df9f7cfe7d9b4fb05fc8b3b424627
+  - enabled: 1
+    path: Assets/SPRITES/queue/Q5/Q5.unity
+    guid: 0372c7f51948fb84c881d734fece0ad0
+  - enabled: 0
+    path: Assets/Scenes/StarCollection.unity
+    guid: 5622da1fb17662b42b52a3f9881d141b
+  - enabled: 1
+    path: Assets/SPRITES/queue/Q1/Q1Incorrect.unity
+    guid: 2e232c2049e1e5b4fbbcdc2df9c5654a
+  m_configObjects: {}
