@@ -10,11 +10,11 @@ public class thankyou1 : MonoBehaviour
     [SerializeField]
     private float delayBeforeLoadingLost1 = 18f;
     [SerializeField]
-    private float delayBeforeLoadingLost2 = 28f;
+    private float delayBeforeLoadingLost2 = 30f;
     [SerializeField]
-    private float delayBeforeLoadingCat = 40f;
+    private float delayBeforeLoadingCat = 42f;
     [SerializeField]
-    private float delayBeforeLoadingFind = 55f;
+    private float delayBeforeLoadingFind = 57f;
     [SerializeField]
     private float timeElapsed;
     public GameObject henUI;

@@ -12,7 +12,7 @@ public class sorry1 : MonoBehaviour
     [SerializeField]
     private float delayBeforeLoadingHurt = 24f;
     [SerializeField]
-    private float delayBeforeLoadingQuest = 32f;
+    private float delayBeforeLoadingQuest = 36f;
     [SerializeField]
     private float timeElapsed;
     public GameObject turtleWalkUI;

@@ -21,9 +21,24 @@ public class ChooseManu : MonoBehaviour
          SceneManager.LoadScene("DisciplineDaily");
          
     }
-      public void HelpOthersManu()
+     public void backToMain()
     {
-         SceneManager.LoadScene("HelpOthers");
-         
+         SceneManager.LoadScene("Speaking");   
+    }
+     public void gotoSpeaking()
+    {
+         SceneManager.LoadScene("Speaking");   
+    }
+    public void gotoQueue()
+    {
+         SceneManager.LoadScene("queue");   
+    }
+     public void gotoHelpOthers()
+    {
+         SceneManager.LoadScene("HelpOthers");   
+    }
+         public void gotoKeepInOrder()
+    {
+         SceneManager.LoadScene("KeepInOrder");   
     }
 }
