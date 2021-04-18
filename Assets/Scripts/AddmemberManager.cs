@@ -514,11 +514,11 @@ public class AddmemberManager : MonoBehaviour
 //         print("name ="+name);
 //      }
 //     }
-// if(!name.Equals("")){
-//         nameIncheckList.Add(name);
-//         //nameIncheckList.RemoveAt(nameIncheckList.Count);
-//  print("name ="+name);
-// }
+if(!name.Equals("")){
+        nameIncheckList.Add(name);
+        //nameIncheckList.RemoveAt(nameIncheckList.Count);
+ print("name ="+name);
+}
      
       
     }

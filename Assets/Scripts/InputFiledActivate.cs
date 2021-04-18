@@ -7,11 +7,15 @@ using UnityEngine;
 public class InputFiledActivate : MonoBehaviour
 {
     // Start is called before the first frame update
+    
+[Header("Profile pic")]
    public InputField mainInputField;
     public InputField mainInputField2;
     public InputField mainInputField3;
 
     public InputField mainInputField4;
+    // public InputField InputField;
+
 
    public InputField filed1;
    public InputField filed2;
@@ -25,37 +29,22 @@ public string s3;
     void Start()
     {
         mainInputField.ActivateInputField();
-        
+                
+
         
     }
      void Update () 
      {
-        
-       
-        // s2 = filed2.text;
-        //  s3 = filed3.text;
-        // //string s4 = filed4.text; i
-        // if(s3.Length==1)
-        // {
-        //         mainInputField4.ActivateInputField();
-        //          s3="";
-        // }
-        //  if(s2.Length==1)
-        // {
-        //         mainInputField3.ActivateInputField();
-        //          s2=""; 
-                
-        // }
-        // if(s1.Length==1)
-        // {
-        //         mainInputField2.ActivateInputField();
-        //         s1=""; 
-                
-              
-        // }
+     
        
        
     }
+    // public void InputField1()
+    // {
+    // InputField.ActivateInputField();
+
+    // }
+
     public void Filed1(){
         s1 = filed1.text;
         if(s1.Length==1)
