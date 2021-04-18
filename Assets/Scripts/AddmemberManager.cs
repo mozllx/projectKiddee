@@ -90,6 +90,9 @@ public class AddmemberManager : MonoBehaviour
     public GameObject checkPasswordImage; 
     public Text checkPasswordName;
 
+    [Header("AddSuccess")]
+    public GameObject AddSuccessUI; 
+
     private void Awake()
     {
 
@@ -393,6 +396,9 @@ public class AddmemberManager : MonoBehaviour
            passwordAddmemberbox.SetActive(false);
             Addmemberbox.SetActive(false);
             OnSubmit();
+            AddSuccessUI.SetActive(true);
+            Invoke("AddSuccess", 3); 
+
             
          }else{
               print("not pass");
@@ -569,6 +575,10 @@ if(!name.Equals("")){
         
    
 
+    }
+    public void AddSuccess()
+    {
+        AddSuccessUI.SetActive(false);
     }
      
 
