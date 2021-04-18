@@ -41,6 +41,10 @@ public class StarCollection : MonoBehaviour
     {
         
     }
+    public void Users()
+    {
+         SceneManager.LoadScene("User");
+    }
     public void ScoreboardButton()
     {        
        // StartCoroutine(LoadScoreboardData());
