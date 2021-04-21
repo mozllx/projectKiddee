@@ -90,9 +90,9 @@ public class AddmemberManager : MonoBehaviour
     public GameObject checkPasswordImage; 
     public Text checkPasswordName;
 
-    [Header("AddSuccess")]
+    [Header("Add Remove Success")]
     public GameObject AddSuccessUI; 
-
+    public GameObject RemoveSuccessUI; 
     private void Awake()
     {
 
@@ -417,7 +417,8 @@ public class AddmemberManager : MonoBehaviour
             remove2.SetActive(false);
              remove3.SetActive(false);
             passwordRemovememberbox.SetActive(false);
-
+            RemoveSuccessUI.SetActive(true);
+            Invoke("RemoveSuccess", 3); 
             
          }else{
               print("not pass");
@@ -581,6 +582,10 @@ if(!name.Equals("")){
         AddSuccessUI.SetActive(false);
     }
      
-
+    public void RemoveSuccess()
+    {
+        RemoveSuccessUI.SetActive(false);
+    }
+     
 
 }
