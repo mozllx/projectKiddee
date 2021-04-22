@@ -13784,7 +13784,6 @@ MonoBehaviour:
   passwordUser: 
   buttonKey: 
   buttonName: 0
-  buttonNameMember: 0
   buttons:
   - {fileID: 689800964}
   - {fileID: 1303546320}
@@ -13800,10 +13799,10 @@ MonoBehaviour:
   image2: {fileID: 368185303}
   image3: {fileID: 185399282}
   image4: {fileID: 547396307}
-  sprite0: {fileID: 21300000, guid: 66ebd1c54311ef7479c1324ff8a4801b, type: 3}
-  sprite1: {fileID: 21300000, guid: ed3d1d573aa84b040adb9b608a49389c, type: 3}
-  sprite2: {fileID: 21300000, guid: e9e8948bb3e6cba448e3dd0a48275030, type: 3}
-  sprite3: {fileID: 21300000, guid: e6ef5913ae3e2be4b9eea612d3a07d3f, type: 3}
+  sprite1: {fileID: 21300000, guid: 66ebd1c54311ef7479c1324ff8a4801b, type: 3}
+  sprite2: {fileID: 21300000, guid: ed3d1d573aa84b040adb9b608a49389c, type: 3}
+  sprite3: {fileID: 21300000, guid: e9e8948bb3e6cba448e3dd0a48275030, type: 3}
+  sprite4: {fileID: 21300000, guid: e6ef5913ae3e2be4b9eea612d3a07d3f, type: 3}
   checkPasswordImage: {fileID: 837336739}
   checkPasswordName: {fileID: 1105288441}
   AddSuccessUI: {fileID: 725266023}
@@ -13882,10 +13881,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image1: {fileID: 640154411}
-  sprite0: {fileID: 21300000, guid: 66ebd1c54311ef7479c1324ff8a4801b, type: 3}
-  sprite1: {fileID: 21300000, guid: ed3d1d573aa84b040adb9b608a49389c, type: 3}
-  sprite2: {fileID: 21300000, guid: e9e8948bb3e6cba448e3dd0a48275030, type: 3}
-  sprite3: {fileID: 21300000, guid: e6ef5913ae3e2be4b9eea612d3a07d3f, type: 3}
+  sprite1: {fileID: 21300000, guid: 66ebd1c54311ef7479c1324ff8a4801b, type: 3}
+  sprite2: {fileID: 21300000, guid: ed3d1d573aa84b040adb9b608a49389c, type: 3}
+  sprite3: {fileID: 21300000, guid: e9e8948bb3e6cba448e3dd0a48275030, type: 3}
+  sprite4: {fileID: 21300000, guid: e6ef5913ae3e2be4b9eea612d3a07d3f, type: 3}
+  sprite5: {fileID: 21300000, guid: df8f78d6d8e020241a4b8d319fe172de, type: 3}
+  sprite6: {fileID: 21300000, guid: ce70bf7c9e933574586d35263effc682, type: 3}
+  sprite7: {fileID: 21300000, guid: 9459317c62976514e947b4981af6d6b9, type: 3}
+  sprite8: {fileID: 21300000, guid: f936bcbb1bbeb1747b1ac833c2b5d89f, type: 3}
+  sprite9: {fileID: 21300000, guid: f7acb7a3803bbe8459565c766511241f, type: 3}
   button: {fileID: 210310407}
   button2: {fileID: 485406346}
 --- !u!1 &1612229613
@@ -17331,7 +17335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2094268102
 RectTransform:
   m_ObjectHideFlags: 0

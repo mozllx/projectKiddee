@@ -59,6 +59,8 @@ public class AddmemberManager : MonoBehaviour
     public static ArrayList picList = new ArrayList();
     public static ArrayList picList2 = new ArrayList();
     public static ArrayList nameIncheckList = new ArrayList();
+    public static ArrayList keykListEditUI = new ArrayList();
+
 
     ArrayList keyList = new ArrayList();
 
@@ -66,7 +68,7 @@ public class AddmemberManager : MonoBehaviour
     public string passwordUser;
     public string buttonKey;
     public int buttonName; //ดูว่ากดปุ๋มลบไหน
-    public int buttonNameMember; //ดูว่ากดปุ๋มไหน
+    public static int buttonNameMember; //ดูว่ากดปุ๋มไหน
 
     public static int gender;
     public static string name;
@@ -83,10 +85,11 @@ public class AddmemberManager : MonoBehaviour
     public GameObject image2;
     public GameObject image3;
     public GameObject image4;
-    public Sprite sprite0;
+    
     public Sprite sprite1;
     public Sprite sprite2;
     public Sprite sprite3;
+    public Sprite sprite4;
     public GameObject checkPasswordImage; 
     public Text checkPasswordName;
 
@@ -196,14 +199,11 @@ public class AddmemberManager : MonoBehaviour
        for(int i=0;i<count;i++){
         buttons[i].gameObject.SetActive(true); 
         buttons[i].GetComponentInChildren<Text>().text = ""+nameList[i]; //****** i member name ?
+
         //print("pic list : "+picList[i]);
         int c=Int32.Parse(""+picList[i]);
-        if(c==0)
+        if(c==1)
 
-        {
-            Images[i].GetComponent<Image>().sprite=sprite0;
-        }
-        else  if(c==1)
         {
             Images[i].GetComponent<Image>().sprite=sprite1;
         }
@@ -211,9 +211,13 @@ public class AddmemberManager : MonoBehaviour
         {
             Images[i].GetComponent<Image>().sprite=sprite2;
         }
-         else  if(c==3)
+        else  if(c==3)
         {
             Images[i].GetComponent<Image>().sprite=sprite3;
+        }
+         else  if(c==4)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite4;
         }
        }
        // dddddd();
@@ -230,12 +234,8 @@ public class AddmemberManager : MonoBehaviour
         buttons[count-1].GetComponentInChildren<Text>().text = ""+nameList2[i]; //****** i member name ?
         //print("AddButtons2 pic list : "+picList2[i]);
         int c=Int32.Parse(""+picList2[i]);
-        if(c==0)
+        if(c==1)
 
-        {
-            Images[count-1].GetComponent<Image>().sprite=sprite0;
-        }
-        else  if(c==1)
         {
             Images[count-1].GetComponent<Image>().sprite=sprite1;
         }
@@ -243,9 +243,13 @@ public class AddmemberManager : MonoBehaviour
         {
             Images[count-1].GetComponent<Image>().sprite=sprite2;
         }
-         else  if(c==3)
+        else  if(c==3)
         {
             Images[count-1].GetComponent<Image>().sprite=sprite3;
+        }
+         else  if(c==4)
+        {
+            Images[count-1].GetComponent<Image>().sprite=sprite4;
         }
        }
 
@@ -260,12 +264,8 @@ public class AddmemberManager : MonoBehaviour
          buttons[i].gameObject.SetActive(true); 
           buttons[i].GetComponentInChildren<Text>().text = ""+nameList3[i]; //****** i member name ?
        int c=Int32.Parse(""+picList[i]);
-        if(c==0)
+        if(c==1)
 
-        {
-            Images[i].GetComponent<Image>().sprite=sprite0;
-        }
-        else  if(c==1)
         {
             Images[i].GetComponent<Image>().sprite=sprite1;
         }
@@ -273,9 +273,13 @@ public class AddmemberManager : MonoBehaviour
         {
             Images[i].GetComponent<Image>().sprite=sprite2;
         }
-         else  if(c==3)
+        else  if(c==3)
         {
             Images[i].GetComponent<Image>().sprite=sprite3;
+        }
+         else  if(c==4)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite4;
         }
        }
       
@@ -288,6 +292,7 @@ public class AddmemberManager : MonoBehaviour
         passwordList.RemoveAt(buttonName);
         picList.RemoveAt(buttonName);
         nameIncheckList.RemoveAt(buttonName);
+//        keykListEditUI.RemoveAt(buttonName);
         // for(int i = 0 ; i < nameList3.Count; i++)
         // {
         //     print("nameList3 "+nameList3[i] + ", ");
@@ -321,29 +326,30 @@ public class AddmemberManager : MonoBehaviour
         public void OnClickedMember(Button button)
     {
         nameIncheckList.Clear();
+        keykListEditUI.Clear();
         RaadAllData();
 
 
         if(button.name=="0"){
              buttonNameMember=0; 
-             print("buttonNameMember "+button.name)  ;
+            // print("buttonNameMember "+button.name)  ;
             
            
         }else if(button.name=="1"){
              buttonNameMember=1;   
-           print("buttonNameMember "+button.name)  ;
+           //print("buttonNameMember "+button.name)  ;
            
         }else if(button.name=="2"){
              buttonNameMember=2;   
-       print("buttonNameMember "+button.name)  ;
+      // print("buttonNameMember "+button.name)  ;
            
         }else if(button.name=="3"){
              buttonNameMember=3;   
-            print("buttonNameMember "+button.name)  ;
+           // print("buttonNameMember "+button.name)  ;
            
         }else if(button.name=="4"){
              buttonNameMember=4;   
-             print("buttonNameMember "+button.name)  ;
+            // print("buttonNameMember "+button.name)  ;
            
         }
      
@@ -353,35 +359,40 @@ public class AddmemberManager : MonoBehaviour
     {
         
          int c=Int32.Parse(""+picList[buttonNameMember]);
-                     print("buttonNameMember "+buttonNameMember);
+                    // print("buttonNameMember "+buttonNameMember);
 
          checkPasswordName.text=""+nameIncheckList[buttonNameMember];
                         print("checkPasswordName "+checkPasswordName.text);
                        for(int i = 0 ; i < nameIncheckList.Count; i++){
          print("checkPasswordName List "+nameIncheckList[i]);
+         
+
+    }
+      for(int i = 0 ; i < keykListEditUI.Count; i++){
+         print("keyList  "+keykListEditUI[i]);
 
     }
 
          //print("CheckPasswordImage pic list : "+picList[buttonName]);
-        if(c==0)
+        if(c==1)
 
         {
-            checkPasswordImage.GetComponent<Image>().sprite=sprite0;
-            print("CheckPasswordImage "+c);
-        }
-        else  if(c==1)
-        {
             checkPasswordImage.GetComponent<Image>().sprite=sprite1;
-            print("CheckPasswordImage "+c);
+           // print("CheckPasswordImage "+c);
         }
         else  if(c==2)
         {
             checkPasswordImage.GetComponent<Image>().sprite=sprite2;
-            print("CheckPasswordImage "+c);
+            //("CheckPasswordImage "+c);
         }
-         else  if(c==3)
+        else  if(c==3)
         {
             checkPasswordImage.GetComponent<Image>().sprite=sprite3;
+            //print("CheckPasswordImage "+c);
+        }
+         else  if(c==4)
+        {
+            checkPasswordImage.GetComponent<Image>().sprite=sprite4;
         }
      
     }
@@ -453,6 +464,7 @@ public class AddmemberManager : MonoBehaviour
         mData.m_name = nameField.text;
         nameList2.Add(nameField.text);
         picList2.Add(ProfileMember.count);
+        keykListEditUI.Add(key);
         
         string json = JsonUtility.ToJson(mData);
         print("json "+json);

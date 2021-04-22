@@ -14,7 +14,7 @@ using Object = UnityEngine.Object;
 public class CilckProfile : MonoBehaviour
 {
     public GameObject image1;
-   
+   [Header("Sprite")]
     public Sprite sprite1;
     public Sprite sprite2;
     public Sprite sprite3;
@@ -24,6 +24,7 @@ public class CilckProfile : MonoBehaviour
      public Sprite sprite7;
     public Sprite sprite8;
     public Sprite sprite9;
+     [Header("Button")]
     public Button button1;
     public Button button2;
     public Button button3;
@@ -33,9 +34,18 @@ public class CilckProfile : MonoBehaviour
     public Button button7;
     public Button button8;
     public Button button9;
+    
+    [Header("Count")]
+    public int Count;
+    public string KeyClick;
+    private DatabaseReference reference;
+
     // Start is called before the first frame update
     void Start()
     {
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
+        FirebaseApp.GetInstance("https://project-75a5c-default-rtdb.firebaseio.com/");
+
         button1.onClick.AddListener(delegate{Profile1();});
         button2.onClick.AddListener(delegate{Profile2();});
         button3.onClick.AddListener(delegate{Profile3();});
@@ -55,46 +65,61 @@ public class CilckProfile : MonoBehaviour
     private void Profile1()
     {
         image1.GetComponent<Image>().sprite=sprite1;
+        for(int i = 0 ; i < RemoveMember.keyList.Count; i++){
+         print("keyList "+RemoveMember.keyList[i]);
+
+    }
+    
+    print("buttonNameMember "+RemoveMember.keyList[AddmemberManager.buttonNameMember]);
+    KeyClick=""+RemoveMember.keyList[AddmemberManager.buttonNameMember];
+         Count=1;
+
     }
 
     private void Profile2()
     {
         image1.GetComponent<Image>().sprite=sprite2;
-
+        Count=2;
     }
     private void Profile3()
     {
         image1.GetComponent<Image>().sprite=sprite3;
-
+        Count=3;
     }
     private void Profile4()
     {
         image1.GetComponent<Image>().sprite=sprite4;
-
+        Count=4;
     }
     private void Profile5()
     {
         image1.GetComponent<Image>().sprite=sprite5;
-
+        Count=5;
     }
     private void Profile6()
     {
         image1.GetComponent<Image>().sprite=sprite6;
-
+        Count=6;
     }
     private void Profile7()
     {
         image1.GetComponent<Image>().sprite=sprite7;
-
+        Count=7;
     }
     private void Profile8()
     {
         image1.GetComponent<Image>().sprite=sprite8;
-
+        Count=8;
     }
     private void Profile9()
     {
         image1.GetComponent<Image>().sprite=sprite9;
+        Count=9;
+    }
+
+    public void ConfirmButton()
+    {
+        reference.Child(LoginManager.localId).Child(KeyClick).Child("pic").SetValueAsync(Count);
 
     }
 }

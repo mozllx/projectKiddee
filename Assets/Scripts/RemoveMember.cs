@@ -25,8 +25,8 @@ public class RemoveMember : MonoBehaviour
     public static int count;
     public string passwordUser;
 
-    ArrayList keyList = new ArrayList();
-    ArrayList nameList = new ArrayList();
+   public static ArrayList keyList = new ArrayList();
+    public static ArrayList nameList = new ArrayList();
     
 
     public string buttonKey;
@@ -67,6 +67,7 @@ public class RemoveMember : MonoBehaviour
        for(int i=0;i<GetCount();i++){
         remove[i].gameObject.SetActive(true); 
        }
+        
     
        
         
@@ -238,6 +239,10 @@ public class RemoveMember : MonoBehaviour
             Remove();
             reference.Child(LoginManager.localId).Child(buttonKey).RemoveValueAsync();
             keyList.RemoveAt(buttonName);
+            for(int i = 0 ; i < keyList.Count; i++){
+         print("keyList "+keyList[i]);
+
+    }
             count--;
             reference.Child(LoginManager.localId).Child("m_count").SetValueAsync(count);
            

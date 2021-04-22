@@ -550,6 +550,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 706947565}
+        m_MethodName: ConfirmButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &139086723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2539,6 +2550,8 @@ MonoBehaviour:
   button7: {fileID: 1340586397}
   button8: {fileID: 1926286544}
   button9: {fileID: 1865568670}
+  Count: 0
+  KeyClick: 
 --- !u!4 &706947566
 Transform:
   m_ObjectHideFlags: 0
@@ -6566,7 +6579,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1650660104}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -6632,7 +6645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1650660105
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8954,7 +8967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58.5, y: 111.03}
+  m_AnchoredPosition: {x: 58.5, y: 113.4}
   m_SizeDelta: {x: 450.85986, y: 79.34239}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2120592192
