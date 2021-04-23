@@ -24,7 +24,14 @@ public class StarCollection : MonoBehaviour
     public GameObject scoreElement;
     public Transform scoreboardContent;
     ArrayList nameMember = new ArrayList();
+    ArrayList showButton = new ArrayList();
+
     private string display = "";
+
+     [SerializeField]
+    private Button[] reportBtn;
+     [SerializeField]
+    private Button[] starBtn;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,10 +86,12 @@ public class StarCollection : MonoBehaviour
         Member u = JsonUtility.FromJson<Member>(j);
         // Debug.Log(u.no+" "+u.m_name+" "+u.m_password);
         // nameText.text=u.m_name.ToString();  
-         if(!nameMember.Contains(u.m_name)){
+         if(!nameMember.Contains(u.m_name)&&!showButton.Contains(u.m_name)){
         nameMember.Add(u.m_name);
+        showButton.Add(u.m_name);
         
        }
+       ShowButtons();
         Display();      
          
     }
@@ -94,9 +103,18 @@ public class StarCollection : MonoBehaviour
          }
          nameText.text = display;
          print("display "+display);
+         
     }
+    public void ShowButtons(){
 
-
+       for(int i=0;i<showButton.Count-1;i++){
+           print("showButton :"+showButton[i]);
+        reportBtn[i].gameObject.SetActive(true); 
+        starBtn[i].gameObject.SetActive(true); 
+       }
+        
+        
+    }
 
    
 }
