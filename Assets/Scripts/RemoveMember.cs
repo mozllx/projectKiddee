@@ -159,13 +159,7 @@ public class RemoveMember : MonoBehaviour
    
     public void KeyButton(Button button)
     {
-       
-        //print(button.name);
-    //     for(int i = 0 ; i < keyList.Count; i++){
-    //      print("keyList "+keyList[i] + ", ");
-
-    // }
-        
+  
          RaadAllData();
         if(button.name=="0"){
              buttonName=0;   
@@ -186,32 +180,32 @@ public class RemoveMember : MonoBehaviour
         }else if(button.name=="4"){
              buttonName=4;  
              buttonKey =""+keyList[4];
-           
+    
+        }else if(button.name=="5"){
+             buttonName=5;  
+             buttonKey =""+keyList[5];
+    
+        }else if(button.name=="6"){
+             buttonName=6;  
+             buttonKey =""+keyList[6];
+    
+        }else if(button.name=="7"){
+             buttonName=7;  
+             buttonKey =""+keyList[7];
+    
+        }else if(button.name=="8"){
+             buttonName=8;  
+             buttonKey =""+keyList[8];
+    
+        }else if(button.name=="9"){
+             buttonName=9;  
+             buttonKey =""+keyList[9];
+    
+        }else if(button.name=="10"){
+             buttonName=10;  
+             buttonKey =""+keyList[10];
+    
         }
-                    
-//  for(int i = 0 ; i < keyList.Count; i++){
-//          print("keyList "+keyList[i] + ", ");
-//             }
-        
-        //print("buttonKey  "+buttonKey);
-      
-            //buttons[k].gameObject.SetActive(false);\
-              //keyList.RemoveAt(k);
-           //nameList3.RemoveAt(k);
-           // Invoke("AddButtons3", 2);
-          
-          // Destroy(button.gameObject); 
-            
-
-        //      FirebaseDatabase.DefaultInstance.GetReference(LoginManager.localId).GetValueAsync().ContinueWith(task => 
-        // {  
-        // DataSnapshot snapshot = task.Result;
-        // string ss = snapshot.Child(buttonKey).Child(m_name).Value.ToString();
-       // print(ss);
-       
-         
-            
-        //});  
 
     }
 
@@ -240,7 +234,7 @@ public class RemoveMember : MonoBehaviour
             reference.Child(LoginManager.localId).Child(buttonKey).RemoveValueAsync();
             keyList.RemoveAt(buttonName);
             for(int i = 0 ; i < keyList.Count; i++){
-         print("keyList "+keyList[i]);
+             print("keyList "+keyList[i]);
 
     }
             count--;

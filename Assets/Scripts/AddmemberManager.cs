@@ -18,9 +18,18 @@ public class AddmemberManager : MonoBehaviour
 {
 
       [Header("Remove Button")] //ลบเเล้วเอาปุ่มซ่อน
+    public GameObject remove0;
      public GameObject remove1;  
      public GameObject remove2;
      public GameObject remove3;
+     public GameObject remove4;  
+     public GameObject remove5;
+     public GameObject remove6;
+     public GameObject remove7;  
+     public GameObject remove8;
+     public GameObject remove9;  
+     public GameObject remove10;
+     
 
     
     [Header("Box")] //เอาไว้ปิดกล่อง
@@ -81,15 +90,16 @@ public class AddmemberManager : MonoBehaviour
     
     [Header("Profile pic")]
     public GameObject[] Images;
-    public GameObject image;
-    public GameObject image2;
-    public GameObject image3;
-    public GameObject image4;
     
     public Sprite sprite1;
     public Sprite sprite2;
     public Sprite sprite3;
     public Sprite sprite4;
+    public Sprite sprite5;
+    public Sprite sprite6;
+    public Sprite sprite7;
+    public Sprite sprite8;
+     public Sprite sprite9;
     public GameObject checkPasswordImage; 
     public Text checkPasswordName;
 
@@ -233,6 +243,27 @@ public class AddmemberManager : MonoBehaviour
         {
             Images[i].GetComponent<Image>().sprite=sprite4;
         }
+        else  if(c==5)
+        {
+           Images[i].GetComponent<Image>().sprite=sprite5;
+        }
+        else  if(c==6)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite6;
+        }
+        else  if(c==7)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite7;
+        }
+        else  if(c==8)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite8;
+        }
+        else  if(c==9)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite9;
+        }
+        
        }
       
         
@@ -271,6 +302,26 @@ public class AddmemberManager : MonoBehaviour
         {
             Images[count-1].GetComponent<Image>().sprite=sprite4;
         }
+         else  if(c==5)
+        {
+          Images[count-1].GetComponent<Image>().sprite=sprite5;
+        }
+        else  if(c==6)
+        {
+            Images[count-1].GetComponent<Image>().sprite=sprite6;
+        }
+        else  if(c==7)
+        {
+            Images[count-1].GetComponent<Image>().sprite=sprite7;
+        }
+        else  if(c==8)
+        {
+            Images[count-1].GetComponent<Image>().sprite=sprite8;
+        }
+        else  if(c==9)
+        {
+            Images[count-1].GetComponent<Image>().sprite=sprite9;
+        }
        }
 
         // Display();
@@ -301,6 +352,26 @@ public class AddmemberManager : MonoBehaviour
          else  if(c==4)
         {
             Images[i].GetComponent<Image>().sprite=sprite4;
+        }
+        else  if(c==5)
+        {
+           Images[i].GetComponent<Image>().sprite=sprite5;
+        }
+        else  if(c==6)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite6;
+        }
+        else  if(c==7)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite7;
+        }
+        else  if(c==8)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite8;
+        }
+        else  if(c==9)
+        {
+            Images[i].GetComponent<Image>().sprite=sprite9;
         }
        }
 
@@ -379,6 +450,30 @@ public class AddmemberManager : MonoBehaviour
              buttonNameMember=4;   
             // print("buttonNameMember "+button.name)  ;
            
+        }else if(button.name=="5"){
+             buttonNameMember=5;   
+            // print("buttonNameMember "+button.name)  ;
+           
+        }else if(button.name=="6"){
+             buttonNameMember=6;   
+            // print("buttonNameMember "+button.name)  ;
+           
+        }else if(button.name=="7"){
+             buttonNameMember=7;   
+            // print("buttonNameMember "+button.name)  ;
+           
+        }else if(button.name=="8"){
+             buttonNameMember=8;   
+            // print("buttonNameMember "+button.name)  ;
+           
+        }else if(button.name=="9"){
+             buttonNameMember=9;   
+            // print("buttonNameMember "+button.name)  ;
+           
+        }else if(button.name=="10"){
+             buttonNameMember=10;   
+            // print("buttonNameMember "+button.name)  ;
+           
         }
      
         Invoke("CheckPasswordImage", 2);
@@ -422,6 +517,27 @@ public class AddmemberManager : MonoBehaviour
         {
             checkPasswordImage.GetComponent<Image>().sprite=sprite4;
         }
+        else  if(c==5)
+        {
+            checkPasswordImage.GetComponent<Image>().sprite=sprite5;
+        }
+        else  if(c==6)
+        {
+            checkPasswordImage.GetComponent<Image>().sprite=sprite6;
+        }
+        else  if(c==7)
+        {
+            checkPasswordImage.GetComponent<Image>().sprite=sprite7;
+        }
+        else  if(c==8)
+        {
+            checkPasswordImage.GetComponent<Image>().sprite=sprite8;
+        }
+        else  if(c==9)
+        {
+            checkPasswordImage.GetComponent<Image>().sprite=sprite9;
+        }
+        
      
     }
        public void CheckPasswordAddmember()
@@ -452,9 +568,17 @@ public class AddmemberManager : MonoBehaviour
          if(String.Equals(passwordUser,pf)){
             print("pass");
             Remove();
-           remove1.SetActive(false);
+            remove0.SetActive(false);
+            remove1.SetActive(false);
             remove2.SetActive(false);
-             remove3.SetActive(false);
+            remove3.SetActive(false);
+            remove4.SetActive(false);
+            remove5.SetActive(false);
+            remove6.SetActive(false);
+            remove7.SetActive(false);
+            remove8.SetActive(false);
+            remove9.SetActive(false);
+            remove10.SetActive(false);
             passwordRemovememberbox.SetActive(false);
             RemoveSuccessUI.SetActive(true);
             Invoke("RemoveSuccess", 3); 
@@ -625,6 +749,30 @@ if(!name.Equals("")){
         }else if(button.name=="4"){
              buttonName=4;   
              buttonKey =""+keyList[4];
+           
+        }else if(button.name=="5"){
+             buttonName=4;   
+             buttonKey =""+keyList[5];
+           
+        }else if(button.name=="6"){
+             buttonName=4;   
+             buttonKey =""+keyList[6];
+           
+        }else if(button.name=="7"){
+             buttonName=4;   
+             buttonKey =""+keyList[7];
+           
+        }else if(button.name=="8"){
+             buttonName=4;   
+             buttonKey =""+keyList[8];
+           
+        }else if(button.name=="9"){
+             buttonName=4;   
+             buttonKey =""+keyList[9];
+           
+        }else if(button.name=="10"){
+             buttonName=4;   
+             buttonKey =""+keyList[10];
            
         }
         
