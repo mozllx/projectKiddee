@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 57580564}
   m_Layer: 5
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -913,6 +913,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1582431159}
         m_MethodName: OnClickedMember
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 57580561}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1582431159}
+        m_MethodName: OnClicked
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 57580561}
@@ -2747,6 +2758,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1582431162}
         m_MethodName: ChangeImg1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1663336601}
+        m_MethodName: AddmemberBox
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5864,7 +5886,40 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1856091345}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1582431159}
+        m_MethodName: CheckPasswordMember
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1582431159}
+        m_MethodName: OnClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 587177433}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1582431159}
+        m_MethodName: OnClickedMember
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 587177433}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &587177434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6395,7 +6450,7 @@ GameObject:
   - component: {fileID: 689800967}
   m_Layer: 5
   m_Name: 0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6487,6 +6542,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1582431159}
+        m_MethodName: OnClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 689800964}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1663336603}
+        m_MethodName: CheckPasswordMemberbox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 0
 --- !u!114 &689800965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9021,8 +9098,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1663336601}
-        m_MethodName: Filed2
+      - m_Target: {fileID: 1663336603}
+        m_MethodName: Filed5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11278,7 +11355,7 @@ GameObject:
   - component: {fileID: 1303546323}
   m_Layer: 5
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11370,6 +11447,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1582431159}
+        m_MethodName: OnClicked
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1303546320}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1663336600}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 0
 --- !u!114 &1303546321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12790,8 +12889,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1663336601}
-        m_MethodName: Filed3
+      - m_Target: {fileID: 1663336603}
+        m_MethodName: Filed6
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13782,7 +13881,6 @@ MonoBehaviour:
   passwordRemoveField: {fileID: 984673003}
   passwordLogoutField: {fileID: 2060900870}
   passwordUser: 
-  buttonKey: 
   buttonName: 0
   buttons:
   - {fileID: 689800964}
@@ -13807,6 +13905,9 @@ MonoBehaviour:
   checkPasswordName: {fileID: 1105288441}
   AddSuccessUI: {fileID: 725266023}
   RemoveSuccessUI: {fileID: 1456155619}
+  databaseURL: https://project-75a5c-default-rtdb.firebaseio.com/
+  memberURL: 
+  memberName: 
 --- !u!4 &1582431160
 Transform:
   m_ObjectHideFlags: 0
@@ -14054,6 +14155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1663336602}
   - component: {fileID: 1663336601}
+  - component: {fileID: 1663336603}
   m_Layer: 0
   m_Name: InputField
   m_TagString: Untagged
@@ -14098,6 +14200,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1663336603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663336600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d54001223f674449c7f3f67af83342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputField: {fileID: 2135661041}
+  inputField2: {fileID: 979061345}
+  inputField3: {fileID: 1426487851}
+  inputField4: {fileID: 1188944865}
+  cpfiled1: {fileID: 2135661041}
+  cpfiled2: {fileID: 979061345}
+  cpfiled3: {fileID: 1426487851}
+  cpfiled4: {fileID: 1188944865}
+  s4: 
+  s5: 
+  s6: 
 --- !u!1 &1675979939
 GameObject:
   m_ObjectHideFlags: 0
@@ -17763,8 +17888,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1663336601}
-        m_MethodName: Filed1
+      - m_Target: {fileID: 1663336603}
+        m_MethodName: Filed4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

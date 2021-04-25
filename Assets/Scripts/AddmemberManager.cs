@@ -66,7 +66,7 @@ public class AddmemberManager : MonoBehaviour
 
     public static int count;
     public string passwordUser;
-    public string buttonKey;
+    public static string buttonKey;
     public int buttonName; //ดูว่ากดปุ๋มลบไหน
     public static int buttonNameMember; //ดูว่ากดปุ๋มไหน
 
@@ -121,7 +121,7 @@ public class AddmemberManager : MonoBehaviour
         
         GetCount();
         //print(count+"Start");
-        Invoke("AddButtons", 2); 
+        Invoke("AddButtons", 3); 
 
          // AddButtons();
         FirebaseDatabase.DefaultInstance.GetReference(LoginManager.localId) 
@@ -473,14 +473,9 @@ public class AddmemberManager : MonoBehaviour
         print("json "+json);
         string s = LoginManager.localId;
         // เขียนข้อมูลลง Firebase
-        reference.Child(LoginManager.localId).Child(memberName).SetRawJsonValueAsync(json);    
-        GetUsername();
-      
-}
-    private void GetUsername()
-    {        
-        string memberURL2 = reference.Child(LoginManager.localId).Push().Key;
-        HelpOther helpOther = new HelpOther();
+        reference.Child(LoginManager.localId).Child(memberURL).SetRawJsonValueAsync(json);    
+        
+       HelpOther helpOther = new HelpOther();
         string json2 = JsonUtility.ToJson(helpOther);
         KeepInorder keepInorder = new KeepInorder();
         string json3 = JsonUtility.ToJson(keepInorder);
@@ -488,13 +483,13 @@ public class AddmemberManager : MonoBehaviour
         string json4 = JsonUtility.ToJson(queue);
         Speaking speaking = new Speaking();
         string json5 = JsonUtility.ToJson(speaking);
-        reference.Child(LoginManager.localId).Child(memberName).Child("HelpOther").SetRawJsonValueAsync(json2); 
-        reference.Child(LoginManager.localId).Child(memberName).Child("KeepInorder").SetRawJsonValueAsync(json3); 
-        reference.Child(LoginManager.localId).Child(memberName).Child("Queue").SetRawJsonValueAsync(json4); 
-        reference.Child(LoginManager.localId).Child(memberName).Child("Speaking").SetRawJsonValueAsync(json5); 
+        reference.Child(LoginManager.localId).Child(memberURL).Child("HelpOther").Child("History").SetRawJsonValueAsync(json2); 
+        reference.Child(LoginManager.localId).Child(memberURL).Child("KeepInorder").Child("History").SetRawJsonValueAsync(json3); 
+        reference.Child(LoginManager.localId).Child(memberURL).Child("Queue").Child("History").SetRawJsonValueAsync(json4); 
+        reference.Child(LoginManager.localId).Child(memberURL).Child("Speaking").Child("History").SetRawJsonValueAsync(json5); 
+}
 
-        
-    }
+  
 
  public void RaadAllData()
     {
@@ -525,10 +520,11 @@ public class AddmemberManager : MonoBehaviour
          // Debug.Log(u.pic+" "+u.m_name+" "+u.m_password);
         //Debug.Log("key "+key);
        getNameMember(u.m_name);
-       if(!keyList.Contains(key)&&!key.Contains("User")){
-        getKeyMember(key);
         getpassswordMember(u.m_password);
         getPicMember(u.pic);
+       if(!keyList.Contains(key)&&!key.Contains("User")){
+        getKeyMember(key);
+       
        }
        
     }
@@ -608,7 +604,6 @@ if(!name.Equals("")){
         }
         
    
-
     }
     public void AddSuccess()
     {

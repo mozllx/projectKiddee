@@ -6,5 +6,10 @@ using System;
 public class HelpOther {
 
 
-    public int history;
+    public int his;
+
+    public void History(){
+
+
+    }
 }
