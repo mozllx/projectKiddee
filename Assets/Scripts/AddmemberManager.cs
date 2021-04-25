@@ -99,6 +99,10 @@ public class AddmemberManager : MonoBehaviour
         public string databaseURL = "https://project-75a5c-default-rtdb.firebaseio.com/"; 
         public string memberURL;
         public string memberName;
+
+        [Header("Star")]
+        public Text nameText;
+        private string display = "";
     private void Awake()
     {
 
@@ -197,11 +201,18 @@ public class AddmemberManager : MonoBehaviour
 
 
     public void AddButtons(){
+        nameText.text ="";
+        display="";
        
      //StartCoroutine("Wait");
        for(int i=0;i<count;i++){
         buttons[i].gameObject.SetActive(true); 
         buttons[i].GetComponentInChildren<Text>().text = ""+nameList[i]; //****** i member name ?
+       
+        
+       display = display.ToString () + nameList[i].ToString() + "\n";
+       nameText.text =display;
+
 
         //print("pic list : "+picList[i]);
         int c=Int32.Parse(""+picList[i]);
@@ -223,19 +234,25 @@ public class AddmemberManager : MonoBehaviour
             Images[i].GetComponent<Image>().sprite=sprite4;
         }
        }
-       // dddddd();
-       
+      
         
     }
    public void AddButtons2(){
+       nameText.text ="";
+        display="";
      //   StartCoroutine("Wait");
          // Wait();
         //print("AddButtons2 "+count);
+        
        for(int i=0;i<nameList2.Count;i++){
         
         buttons[count-1].gameObject.SetActive(true); 
         buttons[count-1].GetComponentInChildren<Text>().text = ""+nameList2[i]; //****** i member name ?
-        //print("AddButtons2 pic list : "+picList2[i]);
+        print("nameList2   : "+nameList2[i]);
+        
+        display = display.ToString () + nameList2[i].ToString() + "\n";
+        nameText.text =display;
+
         int c=Int32.Parse(""+picList2[i]);
         if(c==1)
 
@@ -256,7 +273,7 @@ public class AddmemberManager : MonoBehaviour
         }
        }
 
-        
+        // Display();
     }
  public void ChangeButtons(){
        
@@ -266,6 +283,7 @@ public class AddmemberManager : MonoBehaviour
          for(int i=0;i<GetCount();i++){
          buttons[i].gameObject.SetActive(true); 
           buttons[i].GetComponentInChildren<Text>().text = ""+nameList3[i]; //****** i member name ?
+          
        int c=Int32.Parse(""+picList[i]);
         if(c==1)
 
@@ -285,7 +303,19 @@ public class AddmemberManager : MonoBehaviour
             Images[i].GetComponent<Image>().sprite=sprite4;
         }
        }
-      
+
+       
+     
+    }
+      public void Display(){
+             nameText.text ="";
+          foreach (string human in nameList) 
+          {
+            display = display.ToString () + human.ToString() + "\n";
+         }
+         nameText.text = display;
+         print("display "+display);
+         
     }
      public void Remove()
      {
@@ -295,16 +325,11 @@ public class AddmemberManager : MonoBehaviour
         passwordList.RemoveAt(buttonName);
         picList.RemoveAt(buttonName);
         nameIncheckList.RemoveAt(buttonName);
-//        keykListEditUI.RemoveAt(buttonName);
-        // for(int i = 0 ; i < nameList3.Count; i++)
-        // {
-        //     print("nameList3 "+nameList3[i] + ", ");
 
-        // }
        
         for(int i=0;i<GetCount();i++){
         buttons[i].gameObject.SetActive(false); 
-       // buttons[i].GetComponentInChildren<Text>().text = ""+nameList[i]; //****** i member name ?
+      
        
        }
            
