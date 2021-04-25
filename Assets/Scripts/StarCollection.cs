@@ -24,6 +24,8 @@ public class StarCollection : MonoBehaviour
     public GameObject scoreElement;
     public Transform scoreboardContent;
     ArrayList nameMember = new ArrayList();
+    //ArrayList showNameMember = new ArrayList();
+
     ArrayList showButton = new ArrayList();
 
     private string display = "";
@@ -32,6 +34,8 @@ public class StarCollection : MonoBehaviour
     private Button[] reportBtn;
      [SerializeField]
     private Button[] starBtn;
+
+     public string buttonName; //ดูว่ากดปุ๋มลบไหน
     // Start is called before the first frame update
     void Start()
     {
@@ -114,6 +118,30 @@ public class StarCollection : MonoBehaviour
        }
         
         
+    }
+
+      public void OnClicked(Button button) //ดูว่ากดปุ่มดาวคนไหน 
+    {
+        
+        if(button.name=="StarBTN0"){
+             buttonName=""+AddmemberManager.nameList3[0];
+             print("buttonName "+buttonName);
+           
+        }else if(button.name=="StarBTN1"){
+             buttonName=""+AddmemberManager.nameList3[1];
+            print("buttonName "+buttonName);
+        }else if(button.name=="StarBTN2"){
+              buttonName=""+AddmemberManager.nameList3[2];
+            print("buttonName "+buttonName);
+        }else if(button.name=="StarBTN3"){
+              buttonName=""+AddmemberManager.nameList3[3];
+           
+        }else if(button.name=="4"){
+              buttonName=""+AddmemberManager.nameList3[4];
+           
+        }
+        
+   
     }
 
    
