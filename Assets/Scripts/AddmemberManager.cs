@@ -113,6 +113,10 @@ public class AddmemberManager : MonoBehaviour
         [Header("Star")]
         public Text nameText;
         private string display = "";
+         [SerializeField]
+        private Button[] reportBtn;
+         [SerializeField]
+        private Button[] starBtn;
     private void Awake()
     {
 
@@ -212,7 +216,7 @@ public class AddmemberManager : MonoBehaviour
 
     public void AddButtons(){
         nameText.text ="";
-        display="";
+        //display="";
        
      //StartCoroutine("Wait");
        for(int i=0;i<count;i++){
@@ -220,8 +224,10 @@ public class AddmemberManager : MonoBehaviour
         buttons[i].GetComponentInChildren<Text>().text = ""+nameList[i]; //****** i member name ?
        
         
-       display = display.ToString () + nameList[i].ToString() + "\n";
+       display = display.ToString () + nameList[i].ToString() + "\n"; //table star
        nameText.text =display;
+        reportBtn[i].gameObject.SetActive(true); 
+        starBtn[i].gameObject.SetActive(true); 
 
 
         //print("pic list : "+picList[i]);
@@ -270,10 +276,13 @@ public class AddmemberManager : MonoBehaviour
     }
    public void AddButtons2(){
        nameText.text ="";
-        display="";
+        //display="";
      //   StartCoroutine("Wait");
          // Wait();
         //print("AddButtons2 "+count);
+        
+        display = display.ToString () + nameList2[nameList2.Count-1].ToString() + "\n"; //table star
+        nameText.text =display;
         
        for(int i=0;i<nameList2.Count;i++){
         
@@ -281,8 +290,9 @@ public class AddmemberManager : MonoBehaviour
         buttons[count-1].GetComponentInChildren<Text>().text = ""+nameList2[i]; //****** i member name ?
         print("nameList2   : "+nameList2[i]);
         
-        display = display.ToString () + nameList2[i].ToString() + "\n";
-        nameText.text =display;
+        
+        reportBtn[i].gameObject.SetActive(true); 
+        starBtn[i].gameObject.SetActive(true); 
 
         int c=Int32.Parse(""+picList2[i]);
         if(c==1)
