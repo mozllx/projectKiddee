@@ -69,6 +69,8 @@ public class AddmemberManager : MonoBehaviour
     public static ArrayList picList2 = new ArrayList();
     public static ArrayList nameIncheckList = new ArrayList();
     public static ArrayList keykListEditUI = new ArrayList();
+    
+    public static ArrayList nameOnTable = new ArrayList();
 
 
     ArrayList keyList = new ArrayList();
@@ -276,6 +278,12 @@ public class AddmemberManager : MonoBehaviour
     }
    public void AddButtons2(){
        nameText.text ="";
+       //nameOnTable.Add(nameList2[nameList2.Count-1]);
+        for(int i=0;i<nameOnTable.Count;i++){
+     //  print("nameOnTable   : "+i+nameOnTable[i]);
+       reportBtn[i].gameObject.SetActive(true); 
+        starBtn[i].gameObject.SetActive(true); 
+        }
         //display="";
      //   StartCoroutine("Wait");
          // Wait();
@@ -288,11 +296,7 @@ public class AddmemberManager : MonoBehaviour
         
         buttons[count-1].gameObject.SetActive(true); 
         buttons[count-1].GetComponentInChildren<Text>().text = ""+nameList2[i]; //****** i member name ?
-        print("nameList2   : "+nameList2[i]);
-        
-        
-        reportBtn[i].gameObject.SetActive(true); 
-        starBtn[i].gameObject.SetActive(true); 
+
 
         int c=Int32.Parse(""+picList2[i]);
         if(c==1)
@@ -333,16 +337,30 @@ public class AddmemberManager : MonoBehaviour
             Images[count-1].GetComponent<Image>().sprite=sprite9;
         }
        }
+    //    for(int i=0;i<picList.Count;i++){
+    //      print("picList "+i+picList[i]);
+    //     }
 
         // Display();
     }
  public void ChangeButtons(){
-       
+        display="";
+        nameText.text ="";
+
     // StartCoroutine("Wait");
        
-        
+        for(int i=0;i<nameOnTable.Count;i++){
+      // print("nameOnTable   : "+i+nameOnTable[i]);
+        // reportBtn[i].gameObject.SetActive(true); 
+        // starBtn[i].gameObject.SetActive(true); 
+
+        display = display.ToString () + nameOnTable[i].ToString() + "\n"; //table star
+        nameText.text =display;
+
+        }
+
          for(int i=0;i<GetCount();i++){
-         buttons[i].gameObject.SetActive(true); 
+            buttons[i].gameObject.SetActive(true); 
           buttons[i].GetComponentInChildren<Text>().text = ""+nameList3[i]; //****** i member name ?
           
        int c=Int32.Parse(""+picList[i]);
@@ -395,7 +413,7 @@ public class AddmemberManager : MonoBehaviour
             display = display.ToString () + human.ToString() + "\n";
          }
          nameText.text = display;
-         print("display "+display);
+        // print("display "+display);
          
     }
      public void Remove()
@@ -405,13 +423,18 @@ public class AddmemberManager : MonoBehaviour
         nameList3.RemoveAt(buttonName);
         passwordList.RemoveAt(buttonName);
         picList.RemoveAt(buttonName);
+        // for(int i=0;i<picList.Count;i++){
+        //  print("picList "+i+picList[i]);
+        // }
         nameIncheckList.RemoveAt(buttonName);
-
+        nameOnTable.RemoveAt(buttonName);
+        
        
         for(int i=0;i<GetCount();i++){
         buttons[i].gameObject.SetActive(false); 
-      
-       
+        reportBtn[i].gameObject.SetActive(false); 
+        starBtn[i].gameObject.SetActive(false); 
+        //print("i "+i);
        }
            
          Invoke("ChangeButtons", 2); 
@@ -495,16 +518,16 @@ public class AddmemberManager : MonoBehaviour
                     // print("buttonNameMember "+buttonNameMember);
 
          checkPasswordName.text=""+nameIncheckList[buttonNameMember];
-                        print("checkPasswordName "+checkPasswordName.text);
-                       for(int i = 0 ; i < nameIncheckList.Count; i++){
-         print("checkPasswordName List "+nameIncheckList[i]);
+    //                     print("checkPasswordName "+checkPasswordName.text);
+    //                    for(int i = 0 ; i < nameIncheckList.Count; i++){
+    //      print("checkPasswordName List "+nameIncheckList[i]);
          
 
-    }
-      for(int i = 0 ; i < keykListEditUI.Count; i++){
-         print("keyList  "+keykListEditUI[i]);
+    // }
+    //   for(int i = 0 ; i < keykListEditUI.Count; i++){
+    //      print("keyList  "+keykListEditUI[i]);
 
-    }
+    // }
 
          //print("CheckPasswordImage pic list : "+picList[buttonName]);
         if(c==1)
@@ -683,7 +706,11 @@ public class AddmemberManager : MonoBehaviour
         getPicMember(u.pic);
        if(!keyList.Contains(key)&&!key.Contains("User")){
         getKeyMember(key);
+        
        
+       }
+       if(!nameOnTable.Contains(u.m_name)){
+           nameOnTable.Add(u.m_name);
        }
        
     }
@@ -700,6 +727,7 @@ public class AddmemberManager : MonoBehaviour
 
         nameList.Add(name);
         nameList3.Add(name);
+        
         //if(!name.Equals("")){
 //         foreach (string aString in nameIncheckList)
 // {
@@ -712,7 +740,7 @@ public class AddmemberManager : MonoBehaviour
 if(!name.Equals("")){
         nameIncheckList.Add(name);
         //nameIncheckList.RemoveAt(nameIncheckList.Count);
- print("name ="+name);
+ //print("name ="+name);
 }
      
       
@@ -733,12 +761,14 @@ if(!name.Equals("")){
     {
 
         picList.Add(pic);
+
            
     }
   
     public void OnClicked(Button button)
     {
         nameList3.Clear();
+        picList.Clear();
         RaadAllData();
         if(button.name=="0"){
              buttonName=0;   

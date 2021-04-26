@@ -137,7 +137,7 @@ public class RemoveMember : MonoBehaviour
    
     public void dddddd(){
     for(int i = 0 ; i < nameList.Count; i++){
-         print("nameList "+nameList[i] + ", ");
+        // print("nameList "+nameList[i] + ", ");
 
     }
      }
@@ -234,7 +234,7 @@ public class RemoveMember : MonoBehaviour
             reference.Child(LoginManager.localId).Child(buttonKey).RemoveValueAsync();
             keyList.RemoveAt(buttonName);
             for(int i = 0 ; i < keyList.Count; i++){
-             print("keyList "+keyList[i]);
+             //print("keyList "+keyList[i]);
 
     }
             count--;
