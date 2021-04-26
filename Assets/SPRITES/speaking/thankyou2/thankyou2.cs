@@ -36,7 +36,8 @@ public class thankyou2 : MonoBehaviour
         redBirdUI.SetActive(false);
         inNightUI.SetActive(false);
         helpUI.SetActive(false);
-        /*questUI.SetActive(false);*/
+        happyUI.SetActive(false);
+        questUI.SetActive(false);
     }
 
     // Update is called once per frame

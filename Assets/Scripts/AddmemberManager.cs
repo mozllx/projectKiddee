@@ -97,7 +97,7 @@ public class AddmemberManager : MonoBehaviour
     public GameObject AddSuccessUI; 
     public GameObject RemoveSuccessUI; 
         public string databaseURL = "https://project-75a5c-default-rtdb.firebaseio.com/"; 
-        public string memberURL;
+        public static string memberURL;
         public string memberName;
 
         [Header("Star")]
@@ -483,6 +483,7 @@ public class AddmemberManager : MonoBehaviour
     {
 
         memberURL = reference.Child(LoginManager.localId).Push().Key;
+        print("memberurl "+memberURL);
         Dictionary<string, Object> childUpdates = new Dictionary<string, Object>();
         // เขียนข้อมูลลง Model
         Member mData = new Member();
@@ -508,12 +509,15 @@ public class AddmemberManager : MonoBehaviour
         string json4 = JsonUtility.ToJson(queue);
         Speaking speaking = new Speaking();
         string json5 = JsonUtility.ToJson(speaking);
-        reference.Child(LoginManager.localId).Child(memberURL).Child("HelpOther").Child("History").SetRawJsonValueAsync(json2); 
+        /*reference.Child(LoginManager.localId).Child(memberURL).Child("HelpOther").Child("History").SetRawJsonValueAsync(json2); 
         reference.Child(LoginManager.localId).Child(memberURL).Child("KeepInorder").Child("History").SetRawJsonValueAsync(json3); 
         reference.Child(LoginManager.localId).Child(memberURL).Child("Queue").Child("History").SetRawJsonValueAsync(json4); 
-        reference.Child(LoginManager.localId).Child(memberURL).Child("Speaking").Child("History").SetRawJsonValueAsync(json5); 
+        reference.Child(LoginManager.localId).Child(memberURL).Child("Speaking").Child("History").SetRawJsonValueAsync(json5); */
 }
-
+    public string getMemberURL(){
+        return(memberURL);
+        
+    }
   
 
  public void RaadAllData()
