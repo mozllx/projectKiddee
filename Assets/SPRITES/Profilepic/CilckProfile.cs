@@ -55,6 +55,52 @@ public class CilckProfile : MonoBehaviour
         button7.onClick.AddListener(delegate{Profile7();});
         button8.onClick.AddListener(delegate{Profile8();});
         button9.onClick.AddListener(delegate{Profile9();});
+        CheckImage();
+    }
+
+    public void CheckImage() 
+    {
+        
+         int c=Int32.Parse(""+AddmemberManager.picList[StarCollection.buttonStarCount]);
+        print("c:"+c);
+        if(c==1)
+        {
+            image1.GetComponent<Image>().sprite=sprite1;
+        }
+        else  if(c==2)
+        {
+            image1.GetComponent<Image>().sprite=sprite2;
+        }
+        else  if(c==3)
+        {
+            image1.GetComponent<Image>().sprite=sprite3;
+        }
+         else  if(c==4)
+        {
+            image1.GetComponent<Image>().sprite=sprite4;
+        }
+        else  if(c==5)
+        {
+            image1.GetComponent<Image>().sprite=sprite5;
+        }
+        else  if(c==6)
+        {
+            image1.GetComponent<Image>().sprite=sprite6;
+        }
+        else  if(c==7)
+        {
+            image1.GetComponent<Image>().sprite=sprite7;
+        }
+        else  if(c==8)
+        {
+            image1.GetComponent<Image>().sprite=sprite8;
+        }
+        else  if(c==9)
+        {
+            image1.GetComponent<Image>().sprite=sprite9;
+        }
+        
+     
     }
 
     // Update is called once per frame

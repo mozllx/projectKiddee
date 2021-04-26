@@ -89,7 +89,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/\u0E44\u0E21\u0E48\u0E43\u0E0A\u0E49/StarCollection.unity"
     guid: 5622da1fb17662b42b52a3f9881d141b
   - enabled: 0

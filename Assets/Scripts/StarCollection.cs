@@ -20,7 +20,7 @@ public class StarCollection : MonoBehaviour
     public static string name;
     private DatabaseReference reference;
     public string buttonStarName;
-    public int buttonStarCount;
+    public static int buttonStarCount;
 
     [Header("UserData")]
     public Sprite sprite1;
@@ -95,7 +95,7 @@ public class StarCollection : MonoBehaviour
               buttonStarName=""+AddmemberManager.nameOnTable[4];
            
         }
-        CheckImage();
+       Invoke("CheckImage",1);
    
     }
 
@@ -103,7 +103,7 @@ public class StarCollection : MonoBehaviour
     {
         
          int c=Int32.Parse(""+AddmemberManager.picList[buttonStarCount]);
-    
+        print("c:"+c);
         if(c==1)
 
         {
@@ -123,31 +123,45 @@ public class StarCollection : MonoBehaviour
         else  if(c==3)
         {
             Images.GetComponent<Image>().sprite=sprite3;
+            ImagesSpeaking.GetComponent<Image>().sprite=sprite3;
+            ImagesQueue.GetComponent<Image>().sprite=sprite3;
             //print("CheckPasswordImage "+c);
         }
          else  if(c==4)
         {
             Images.GetComponent<Image>().sprite=sprite4;
+            ImagesSpeaking.GetComponent<Image>().sprite=sprite4;
+            ImagesQueue.GetComponent<Image>().sprite=sprite4;
         }
         else  if(c==5)
         {
             Images.GetComponent<Image>().sprite=sprite5;
+            ImagesSpeaking.GetComponent<Image>().sprite=sprite5;
+            ImagesQueue.GetComponent<Image>().sprite=sprite5;
         }
         else  if(c==6)
         {
             Images.GetComponent<Image>().sprite=sprite6;
+            ImagesSpeaking.GetComponent<Image>().sprite=sprite6;
+            ImagesQueue.GetComponent<Image>().sprite=sprite6;
         }
         else  if(c==7)
         {
             Images.GetComponent<Image>().sprite=sprite7;
+            ImagesSpeaking.GetComponent<Image>().sprite=sprite7;
+            ImagesQueue.GetComponent<Image>().sprite=sprite7;
         }
         else  if(c==8)
         {
             Images.GetComponent<Image>().sprite=sprite8;
+            ImagesSpeaking.GetComponent<Image>().sprite=sprite8;
+            ImagesQueue.GetComponent<Image>().sprite=sprite8;
         }
         else  if(c==9)
         {
             Images.GetComponent<Image>().sprite=sprite9;
+            ImagesSpeaking.GetComponent<Image>().sprite=sprite9;
+            ImagesQueue.GetComponent<Image>().sprite=sprite9;
         }
         
      
