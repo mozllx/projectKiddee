@@ -119,6 +119,7 @@ public class AddmemberManager : MonoBehaviour
         private Button[] reportBtn;
          [SerializeField]
         private Button[] starBtn;
+        public string buttonStarName;
     private void Awake()
     {
 
@@ -356,7 +357,11 @@ public class AddmemberManager : MonoBehaviour
 
         display = display.ToString () + nameOnTable[i].ToString() + "\n"; //table star
         nameText.text =display;
-
+ 
+        reportBtn[i].gameObject.SetActive(true); 
+        starBtn[i].gameObject.SetActive(true); 
+        //print("i "+i);
+       
         }
 
          for(int i=0;i<GetCount();i++){
@@ -515,21 +520,9 @@ public class AddmemberManager : MonoBehaviour
     {
         
          int c=Int32.Parse(""+picList[buttonNameMember]);
-                    // print("buttonNameMember "+buttonNameMember);
 
          checkPasswordName.text=""+nameIncheckList[buttonNameMember];
-    //                     print("checkPasswordName "+checkPasswordName.text);
-    //                    for(int i = 0 ; i < nameIncheckList.Count; i++){
-    //      print("checkPasswordName List "+nameIncheckList[i]);
-         
-
-    // }
-    //   for(int i = 0 ; i < keykListEditUI.Count; i++){
-    //      print("keyList  "+keykListEditUI[i]);
-
-    // }
-
-         //print("CheckPasswordImage pic list : "+picList[buttonName]);
+    
         if(c==1)
 
         {
@@ -827,6 +820,8 @@ if(!name.Equals("")){
     {
         RemoveSuccessUI.SetActive(false);
     }
+
+   
      
 
 }
