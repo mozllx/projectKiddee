@@ -40,12 +40,14 @@ public class CilckProfile : MonoBehaviour
     public string KeyClick;
     private DatabaseReference reference;
 
+    public int c;
+
     // Start is called before the first frame update
     void Start()
     {
         reference = FirebaseDatabase.DefaultInstance.RootReference;
         FirebaseApp.GetInstance("https://project-75a5c-default-rtdb.firebaseio.com/");
-
+        
         button1.onClick.AddListener(delegate{Profile1();});
         button2.onClick.AddListener(delegate{Profile2();});
         button3.onClick.AddListener(delegate{Profile3();});
@@ -55,14 +57,17 @@ public class CilckProfile : MonoBehaviour
         button7.onClick.AddListener(delegate{Profile7();});
         button8.onClick.AddListener(delegate{Profile8();});
         button9.onClick.AddListener(delegate{Profile9();});
-        CheckImage();
+        CheckC();
     }
 
+    public void CheckC() 
+    {
+        c=Int32.Parse(""+AddmemberManager.picList[StarCollection.buttonStarCount]);
+                print("c:"+c);
+        Invoke("CheckImage",1);
+    }
     public void CheckImage() 
     {
-        
-         int c=Int32.Parse(""+AddmemberManager.picList[StarCollection.buttonStarCount]);
-        print("c:"+c);
         if(c==1)
         {
             image1.GetComponent<Image>().sprite=sprite1;
