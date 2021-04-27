@@ -13,7 +13,10 @@ using Object = UnityEngine.Object;
 
 public class CilckProfile : MonoBehaviour
 {
+     [Header("Profile")]
     public GameObject image1;
+    public Text nameText;
+    public InputField Field;
    [Header("Sprite")]
     public Sprite sprite1;
     public Sprite sprite2;
@@ -38,6 +41,7 @@ public class CilckProfile : MonoBehaviour
     [Header("Count")]
     public int Count;
     public string KeyClick;
+    public string nameField;
     private DatabaseReference reference;
 
     public int c;
@@ -57,13 +61,19 @@ public class CilckProfile : MonoBehaviour
         button7.onClick.AddListener(delegate{Profile7();});
         button8.onClick.AddListener(delegate{Profile8();});
         button9.onClick.AddListener(delegate{Profile9();});
-        CheckC();
+        CheckOlder();
+
+
+
     }
 
-    public void CheckC() 
+    public void CheckOlder() 
     {
-        c=Int32.Parse(""+AddmemberManager.picList[StarCollection.buttonStarCount]);
+        c=Int32.Parse(""+AddmemberManager.picList[AddmemberManager.buttonNameMember]);
                 print("c:"+c);
+
+        nameText.text="น้อง"+AddmemberManager.nameIncheckList[AddmemberManager.buttonNameMember];
+                print("nameText.text:"+AddmemberManager.nameIncheckList[AddmemberManager.buttonNameMember]);
         Invoke("CheckImage",1);
     }
     public void CheckImage() 
@@ -130,47 +140,63 @@ public class CilckProfile : MonoBehaviour
     private void Profile2()
     {
         image1.GetComponent<Image>().sprite=sprite2;
+        KeyClick=""+RemoveMember.keyList[AddmemberManager.buttonNameMember];
         Count=2;
     }
     private void Profile3()
     {
         image1.GetComponent<Image>().sprite=sprite3;
+        KeyClick=""+RemoveMember.keyList[AddmemberManager.buttonNameMember];
         Count=3;
     }
     private void Profile4()
     {
         image1.GetComponent<Image>().sprite=sprite4;
+        KeyClick=""+RemoveMember.keyList[AddmemberManager.buttonNameMember];
         Count=4;
     }
     private void Profile5()
     {
         image1.GetComponent<Image>().sprite=sprite5;
+        KeyClick=""+RemoveMember.keyList[AddmemberManager.buttonNameMember];
         Count=5;
     }
     private void Profile6()
     {
         image1.GetComponent<Image>().sprite=sprite6;
+        KeyClick=""+RemoveMember.keyList[AddmemberManager.buttonNameMember];
         Count=6;
     }
     private void Profile7()
     {
         image1.GetComponent<Image>().sprite=sprite7;
+        KeyClick=""+RemoveMember.keyList[AddmemberManager.buttonNameMember];
         Count=7;
     }
     private void Profile8()
     {
         image1.GetComponent<Image>().sprite=sprite8;
+        KeyClick=""+RemoveMember.keyList[AddmemberManager.buttonNameMember];
         Count=8;
     }
     private void Profile9()
     {
         image1.GetComponent<Image>().sprite=sprite9;
+        KeyClick=""+RemoveMember.keyList[AddmemberManager.buttonNameMember];
         Count=9;
+    }
+
+     public void InputField()
+    {
+       
+
     }
 
     public void ConfirmButton()
     {
+        nameField=Field.text;
         reference.Child(LoginManager.localId).Child(KeyClick).Child("pic").SetValueAsync(Count);
+        reference.Child(LoginManager.localId).Child(KeyClick).Child("m_name").SetValueAsync(nameField);
 
     }
 }
