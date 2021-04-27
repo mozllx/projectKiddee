@@ -50,6 +50,7 @@ public class AddmemberManager : MonoBehaviour
     public InputField checkPasswordField2;
     public InputField checkPasswordField3;
     public InputField checkPasswordField4;
+    public string p;
 
     [Header("check password user")]
     public InputField passwordAddField;
@@ -446,30 +447,18 @@ public class AddmemberManager : MonoBehaviour
               
      }
 
-       public void CheckPasswordMember()
-     {
-         string p =""+passwordList[buttonName];
-         string pf =checkPasswordField1.text+""+checkPasswordField2.text+""+checkPasswordField3.text+""+checkPasswordField4.text;
-         if(String.Equals(p,pf)){
-              print("pass");
-              SceneManager.LoadScene("ChooseManu");
-
-         }else{
-              print("not pass");
-         }
-        
-        
-    }
+      
         public void OnClickedMember(Button button)
     {
         nameIncheckList.Clear();
         keykListEditUI.Clear();
+        passwordList.Clear();
         RaadAllData();
 
 
         if(button.name=="0"){
              buttonNameMember=0; 
-            // print("buttonNameMember "+button.name)  ;
+           // print("buttonNameMember "+button.name)  ;
             
            
         }else if(button.name=="1"){
@@ -478,15 +467,15 @@ public class AddmemberManager : MonoBehaviour
            
         }else if(button.name=="2"){
              buttonNameMember=2;   
-      // print("buttonNameMember "+button.name)  ;
+      //print("buttonNameMember "+button.name)  ;
            
         }else if(button.name=="3"){
              buttonNameMember=3;   
-           // print("buttonNameMember "+button.name)  ;
+           //print("buttonNameMember "+button.name)  ;
            
         }else if(button.name=="4"){
              buttonNameMember=4;   
-            // print("buttonNameMember "+button.name)  ;
+           // print("buttonNameMember "+button.name)  ;
            
         }else if(button.name=="5"){
              buttonNameMember=5;   
@@ -513,14 +502,35 @@ public class AddmemberManager : MonoBehaviour
             // print("buttonNameMember "+button.name)  ;
            
         }
-     
+       
+        for(int i=0;i<passwordList.Count;i++){
+             print("passwordList " +passwordList[i]); 
+        }
+       
         Invoke("CheckPasswordImage", 2);
+    }
+
+     public void CheckPasswordMember()
+     {
+        p =""+passwordList[buttonNameMember];
+        print("buttonNameMember "+buttonNameMember) ;
+        print("P " +passwordList[buttonNameMember]);
+        string pf =checkPasswordField1.text+""+checkPasswordField2.text+""+checkPasswordField3.text+""+checkPasswordField4.text;
+        if(String.Equals(p,pf)){
+              print("pass");
+              SceneManager.LoadScene("ChooseManu");
+
+         }else{
+              print("not pass");
+         }
+        
+        
     }
     public void CheckPasswordImage() 
     {
         
          int c=Int32.Parse(""+picList[buttonNameMember]);
-
+           
          checkPasswordName.text=""+nameIncheckList[buttonNameMember];
     
         if(c==1)
@@ -644,6 +654,7 @@ public class AddmemberManager : MonoBehaviour
         nameList2.Add(nameField.text);
         picList2.Add(ProfileMember.count);
         keykListEditUI.Add(memberURL);
+        passwordList.Add(passwordField1.text+""+passwordField2.text+""+passwordField3.text+""+passwordField4.text);
         
         string json = JsonUtility.ToJson(mData);
         print("json "+json);
