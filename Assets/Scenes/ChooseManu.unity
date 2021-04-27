@@ -2553,6 +2553,7 @@ MonoBehaviour:
   button9: {fileID: 1865568670}
   Count: 0
   KeyClick: 
+  c: 0
 --- !u!4 &706947566
 Transform:
   m_ObjectHideFlags: 0
@@ -8013,7 +8014,6 @@ GameObject:
   - component: {fileID: 1868809310}
   - component: {fileID: 1868809309}
   - component: {fileID: 1868809308}
-  - component: {fileID: 1868809307}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -8040,25 +8040,6 @@ RectTransform:
   m_AnchoredPosition: {x: -260.9, y: -28.1}
   m_SizeDelta: {x: 189, y: 189}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1868809307
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868809305}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 156d7458d7f271d428c903fa9da97365, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1868809308
 MonoBehaviour:
   m_ObjectHideFlags: 0
