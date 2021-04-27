@@ -9,7 +9,8 @@ public class Member
     public string m_name;
     public string m_password;
     public int pic;
-    public int historySpeaking;
+    public int speakingHistory;
+    public int speakingFullscore=4;
     // Start is called before the first frame update
 //    public Member()
 //     {
