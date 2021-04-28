@@ -26,7 +26,6 @@ public class GameControl : MonoBehaviour
      public static string member;
      public static string day,time;
      public Text m_MyText;
-    /*กันลอง*/
     
     [SerializeField]
     public GameObject winText1;
@@ -40,18 +39,15 @@ public class GameControl : MonoBehaviour
          winText1.SetActive(false);
          winText2.SetActive(false);
 
-            /*กันลอง*/
         reference = FirebaseDatabase.DefaultInstance.RootReference;
         FirebaseApp.GetInstance("https://project-75a5c-default-rtdb.firebaseio.com/");
         
         FirebaseDatabase.DefaultInstance.GetReference(LoginManager.localId).GetValueAsync().ContinueWith(task => 
     {  
-        /*print("url member "+AddmemberManager.buttonKey);*/
         DataSnapshot snapshot = task.Result;
         s = snapshot.Child(AddmemberManager.buttonKey).Child("helpOtherHistory").Value.ToString();
         history = Int32.Parse(s);
         history +=1;
-            /*กันลอง*/
 
     });  
     }
@@ -67,7 +63,8 @@ public class GameControl : MonoBehaviour
             DragCarrot3.locked = false;
             DragCarrot4.locked = false;
             DragCarrot5.locked = false;
-            count();
+            correct();
+            m_MyText.text =" "+score;
             winText2.SetActive(true);
 
         }
@@ -77,7 +74,8 @@ public class GameControl : MonoBehaviour
             unicon.locked = false;
             tomato.locked = false;
             winText1.SetActive(true);
-            count();
+            correct();
+            m_MyText.text =" "+score;
 
         }
         if(trash.locked && trash2.locked && trash3.locked && trash4.locked && trash5.locked&& trash6.locked){
@@ -88,12 +86,13 @@ public class GameControl : MonoBehaviour
             trash5.locked = false;
             trash6.locked = false;
             winText3.SetActive(true);
-            count();
+            correct();
             saveinEnd();
+            m_MyText.text =" "+score;
         }
         
     }
-    public void count(){
+    public void correct(){
         score += 1;
         print("score is "+score);
     }
