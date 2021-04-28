@@ -1071,6 +1071,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainInputField: {fileID: 878339383}
+  mainInputField2: {fileID: 0}
+  mainInputField3: {fileID: 0}
+  mainInputField4: {fileID: 0}
+  filed1: {fileID: 0}
+  filed2: {fileID: 0}
+  filed3: {fileID: 0}
+  filed4: {fileID: 0}
+  s1: 
+  s2: 
+  s3: 
 --- !u!1 &703830821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,8 +1342,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 703830827}
-          m_MethodName: ClickSound
+        - m_Target: {fileID: 694042660}
+          m_MethodName: SignInUserButton
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
+<<<<<<< Updated upstream
     path: Assets/SPRITES/queue/queue.unity
     guid: 5f5b1093ba0266f4799abf17d68729d4
   - enabled: 0
+=======
+>>>>>>> Stashed changes
     path: Assets/SPRITES/queue/1st-in bus station/Q1/Q1Incorrect.unity
     guid: 4a1b894f58a2af74f8b7ed7e748a1216
   - enabled: 0
@@ -45,11 +48,19 @@ EditorBuildSettings:
     path: Assets/Scenes/ChooseManu.unity
     guid: 5418af635c0500240a0dd56bbb4f33ce
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/SPRITES/helpOther/HelpOthers.unity
     guid: b7ad3e6710587754086eccaf1f563e8b
   - enabled: 1
     path: Assets/SPRITES/speaking/Speaking.unity
     guid: dddc948178c23a84f992c991c3b1db33
+=======
+    path: Assets/SPRITES/speaking/Speaking.unity
+    guid: dddc948178c23a84f992c991c3b1db33
+  - enabled: 0
+    path: Assets/SPRITES/queue/queue.unity
+    guid: 5f5b1093ba0266f4799abf17d68729d4
+>>>>>>> Stashed changes
   - enabled: 0
     path: Assets/SPRITES/queue/queue2.unity
     guid: c018c8a28ad6f4b42a55a0b1d3276eb0

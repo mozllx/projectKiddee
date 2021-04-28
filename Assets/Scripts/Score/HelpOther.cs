@@ -5,11 +5,5 @@ using System;
 [Serializable]
 public class HelpOther {
 
-
-    public int his;
-
-    public void History(){
-
-
-    }
+    public int history;
 }

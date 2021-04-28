@@ -15,6 +15,7 @@ using UnityEngine.EventSystems;
 public class Speaking : MonoBehaviour
 {
      public string databaseURL = "https://project-75a5c-default-rtdb.firebaseio.com/"; 
+<<<<<<< Updated upstream
     private DatabaseReference reference;
      public static int countHis;
      public int score,scoreIncorrect;
@@ -41,6 +42,17 @@ public class Speaking : MonoBehaviour
         history +=1;
 
     });  
+=======
+     public int countHis;
+     public int score;
+    private DatabaseReference reference;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        reference = FirebaseDatabase.DefaultInstance.RootReference;
+        FirebaseApp.GetInstance("https://project-75a5c-default-rtdb.firebaseio.com/");
+>>>>>>> Stashed changes
     }
 
     // Update is called once per frame
@@ -49,6 +61,7 @@ public class Speaking : MonoBehaviour
         
     }
 
+<<<<<<< Updated upstream
 
     public void count(){
         score += 1;
@@ -74,4 +87,25 @@ public class Speaking : MonoBehaviour
         SceneManager.LoadScene("ChooseManu");
     }
 
+=======
+    public void Sum(){
+        /*countHis++;
+        string His = ""+"History"+countHis;
+        reference.Child(LoginManager.localId).Child(AddmemberManager.buttonKey).Child("Speaking").Child(His).Child("Date").SetValueAsync("1");
+        reference.Child(LoginManager.localId).Child(AddmemberManager.buttonKey).Child("Speaking").Child(His).Child("Score").SetValueAsync("1");
+        reference.Child(LoginManager.localId).Child(AddmemberManager.buttonKey).Child("Speaking").Child(His).Child("Time").SetValueAsync("1");*/
+
+    }
+    public void count(){
+        score +=1;
+        print("score is "+score);
+    }
+    public void exit(){
+        countHis++;
+        string His = ""+"History"+countHis;
+        reference.Child(LoginManager.localId).Child(memberURL).Child("Speaking").Child(His).Child("Date").SetValueAsync("1");
+        reference.Child(LoginManager.localId).Child(memberURL).Child("Speaking").Child(His).Child("Time").SetValueAsync("1");
+        reference.Child(LoginManager.localId).Child(memberURL).Child("Speaking").Child(His).Child("Score").SetValueAsync(score);
+    }
+>>>>>>> Stashed changes
 }
